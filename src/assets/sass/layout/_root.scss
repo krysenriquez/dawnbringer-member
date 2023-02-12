@@ -1,0 +1,15 @@
+//
+// Root
+//
+
+// Light mode
+@include theme-light() {
+    // Separator
+    --kt-app-separator-border: #{$app-separator-border};
+}
+
+// Dark mode
+@include theme-dark() {
+	// Separator
+    --kt-app-separator-border: #{$app-separator-border-dark};
+}
