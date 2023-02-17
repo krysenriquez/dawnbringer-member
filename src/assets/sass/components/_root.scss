@@ -147,7 +147,6 @@
 
     // Form checks
     --kt-form-check-label-color: #{$form-check-label-color};
-    --kt-form-check-label-color-checked: #{$form-check-label-color-checked};
     --kt-form-check-input-active-filter: #{$form-check-input-active-filter};
 
     --kt-form-check-input-bg: #{$form-check-input-bg};
@@ -413,9 +412,9 @@
     // Keenthemes scrollbar component 
     --kt-scrollbar-color: #{$scrollbar-color};
     --kt-scrollbar-hover-color: #{$scrollbar-hover-color};
-    --kt-scrollbar-size: #{$scrollbar-size};
-    --kt-scrollbar-overlay-size: #{$scrollbar-overlay-size};
-    --kt-scrollbar-overlay-space: #{$scrollbar-overlay-space};
+    --kt-scrollbar-width: #{$scrollbar-width};
+    --kt-scrollbar-height: #{$scrollbar-height};
+    --kt-scrollbar-space: #{$scrollbar-space};
 
     // Keenthemes overlay component 
     --kt-overlay-bg: #{$overlay-bg};
@@ -432,11 +431,6 @@
     --kt-ribbon-label-bg: #{$ribbon-label-bg};
     --kt-ribbon-label-border-color: #{$ribbon-label-border-color};
     --kt-ribbon-clip-bg: #{$ribbon-clip-bg}; 
-
-    // Engage panel
-    --kt-engage-btn-bg: #{$engage-btn-bg};
-    --kt-engage-btn-color: #{$engage-btn-color};
-    --kt-engage-btn-color-active: #{$engage-btn-color-active};
 }
 
 [data-theme="dark"] {
@@ -572,7 +566,6 @@
 
     // Form checks
     --kt-form-check-label-color: #{$form-check-label-color-dark};
-    --kt-form-check-label-color-checked: #{$form-check-label-color-checked-dark};
     --kt-form-check-input-active-filter: #{$form-check-input-active-filter-dark};
 
     --kt-form-check-input-bg: #{$form-check-input-bg-dark};
@@ -860,9 +853,4 @@
     --kt-ribbon-label-bg: #{$ribbon-label-bg-dark};
     --kt-ribbon-label-border-color: #{$ribbon-label-border-color-dark};
     --kt-ribbon-clip-bg: #{$ribbon-clip-bg-dark};  
-
-    // Engage panel
-    --kt-engage-btn-bg: #{$engage-btn-bg-dark};
-    --kt-engage-btn-color: #{$engage-btn-color-dark};
-    --kt-engage-btn-color-active: #{$engage-btn-color-active-dark};
 }

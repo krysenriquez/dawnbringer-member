@@ -22,8 +22,8 @@ $highlight-btn-color-hover-dark: $primary;
 
 $highlight-scrollbar-color: lighten($highlight-bg, 12%);
 $highlight-scrollbar-color-dark: lighten($highlight-bg-dark, 12%);
-$highlight-scrollbar-color-hover: lighten($highlight-bg, 15%);
-$highlight-scrollbar-color-hover-dark: lighten($highlight-bg-dark, 15%);
+$highlight-scrollbar-hover-color: lighten($highlight-bg, 15%);
+$highlight-scrollbar-hover-color-dark: lighten($highlight-bg-dark, 15%);
 
 // Bootstrap Maxlength
 $bootstrap-maxlength-z-index: 1040;

@@ -70,22 +70,6 @@
     }
 }
 
-// Parent hover
-.parent-hover {
-    @each $name, $color in $theme-text-colors {
-        .parent-hover-#{$name} {
-            transition: $transition-link;
-        }
-
-        &:hover {
-            .parent-hover-#{$name} {
-                transition: $transition-link;
-                color: var(--kt-text-#{$name}) !important;
-            }
-        }    
-    }
-}
-
 // Text transparent
 .text-transparent {
     color: transparent;
@@ -107,17 +91,9 @@
 
 // Icons
 i {
-    &.bi,
-    &[class^="fonticon-"],
-    &[class*=" fonticon-"],
-    &[class^="fa-"],
-    &[class*=" fa-"],
-    &[class^="la-"],
-    &[class*=" la-"] {
-        line-height: 1;
-        font-size: 1rem;
-        color: var(--kt-text-muted);        
-    }   
+    line-height: 1;
+    font-size: 1rem;
+    color: var(--kt-text-muted);
 }
 
 // Link transition

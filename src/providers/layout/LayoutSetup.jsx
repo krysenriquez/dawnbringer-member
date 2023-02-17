@@ -93,11 +93,10 @@ export class LayoutSetup {
     )
 
     if (config.fixed.desktop) {
-      document.body.setAttribute('data-app-header-fixed', 'true')
+      document.body.classList.add('header-fixed')
     }
 
     if (config.fixed.tabletAndMobile) {
-      document.body.setAttribute('data-app-header-fixed-mobile', 'true')
       document.body.classList.add('header-tablet-and-mobile-fixed')
     }
   }
@@ -105,36 +104,36 @@ export class LayoutSetup {
   static initSidebar(config) {
     if (!config.display) {
       return
+    } else {
+      document.body.setAttribute('data-app-sidebar-enabled', 'true')
+      document.body.setAttribute('data-app-sidebar-fixed', config.fixed.desktop.toString() || '')
+
+      if (config.push) {
+        if (config.push.header) {
+          document.body.setAttribute('data-app-sidebar-push-header', 'true')
+        }
+
+        if (config.push.toolbar) {
+          document.body.setAttribute('data-app-sidebar-push-toolbar', 'true')
+        }
+
+        if (config.push.footer) {
+          document.body.setAttribute('data-app-sidebar-push-footer', 'true')
+        }
+      }
+
+      if (config.minimize.desktop.enabled) {
+        if (config.minimize.desktop.default) {
+          document.body.setAttribute('data-app-sidebar-minimize', 'on')
+        }
+
+        if (config.minimize.desktop.hoverable) {
+          document.body.setAttribute('data-app-sidebar-hoverable', 'true')
+        }
+      }
+
+      LayoutSetup.classes.sidebar.push(config.class)
     }
-
-    document.body.setAttribute('data-app-sidebar-enabled', 'true')
-    document.body.setAttribute('data-app-sidebar-fixed', config.fixed.desktop.toString() || '')
-
-    if (config.push) {
-      if (config.push.header) {
-        document.body.setAttribute('data-app-sidebar-push-header', 'true')
-      }
-
-      if (config.push.toolbar) {
-        document.body.setAttribute('data-app-sidebar-push-toolbar', 'true')
-      }
-
-      if (config.push.footer) {
-        document.body.setAttribute('data-app-sidebar-push-footer', 'true')
-      }
-    }
-
-    if (config.minimize.desktop.enabled) {
-      if (config.minimize.desktop.default) {
-        document.body.setAttribute('data-app-sidebar-minimize', 'on')
-      }
-
-      if (config.minimize.desktop.hoverable) {
-        document.body.setAttribute('data-app-sidebar-hoverable', 'true')
-      }
-    }
-
-    LayoutSetup.classes.sidebar.push(config.class)
   }
 
   static initToolbar(config) {
@@ -195,7 +194,7 @@ export class LayoutSetup {
     }
 
     LayoutSetup.initHeader(config.app.header)
-    LayoutSetup.initSidebar(config.app.sidebar)
+    // LayoutSetup.initSidebar(config.app.sidebar)
     LayoutSetup.initPageTitle(config.app.pageTitle)
     LayoutSetup.initToolbar(config.app.toolbar)
     LayoutSetup.initContent(config.app.content)

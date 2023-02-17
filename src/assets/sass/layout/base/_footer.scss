@@ -16,6 +16,7 @@
     @include property(z-index, $app-footer-z-index);
 
     background-color: var(--kt-app-footer-bg-color);
+    box-shadow: var(--kt-app-footer-box-shadow);
     border-top: var(--kt-app-footer-border-top);
   }
 
@@ -30,7 +31,6 @@
 
     [data-app-footer-fixed='true'] & {
       @include property(z-index, $app-footer-fixed-z-index);
-      box-shadow: var(--kt-app-footer-box-shadow);
       position: fixed;
       left: 0;
       right: 0;
@@ -74,6 +74,7 @@
     @include property(z-index, $app-footer-z-index-mobile);
 
     background-color: var(--kt-app-footer-bg-color-mobile);
+    box-shadow: var(--kt-app-footer-box-shadow-mobile);
     border-top: var(--kt-app-footer-border-top-mobile);
   }
 
@@ -88,7 +89,6 @@
 
     [data-app-footer-fixed-mobile='true'] & {
       @include property(z-index, $app-footer-fixed-z-index-mobile);
-      box-shadow: var(--kt-app-footer-box-shadow-mobile);
       position: fixed;
       left: 0;
       right: 0;

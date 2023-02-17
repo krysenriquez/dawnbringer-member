@@ -10,13 +10,13 @@
 
 // Base
 .page-loader {
-  background-color: var(--kt-body-bg);
+  background: var(--kt-body-bg);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 10000;
+  z-index: 1000;
   display: none;
 
   [data-app-page-loading='on'] &,

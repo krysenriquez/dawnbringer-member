@@ -5,10 +5,6 @@
 // General mode
 .app-sidebar {
   transition: $app-sidebar-base-transition;
-  background-color: var(--kt-app-sidebar-base-bg-color);
-  box-shadow: var(--kt-app-sidebar-base-box-shadow);
-  border-left: var(--kt-app-sidebar-base-border-start);
-  border-right: var(--kt-app-sidebar-base-border-end);
 }
 
 // Utilities
@@ -27,6 +23,11 @@
     display: flex;
     flex-shrink: 0;
     width: var(--kt-app-sidebar-width);
+
+    background-color: var(--kt-app-sidebar-base-bg-color);
+    box-shadow: var(--kt-app-sidebar-base-box-shadow);
+    border-left: var(--kt-app-sidebar-base-border-start);
+    border-right: var(--kt-app-sidebar-base-border-end);
 
     @include property(z-index, $app-sidebar-base-z-index);
     @include property(margin-left, $app-sidebar-base-gap-start);
@@ -48,7 +49,7 @@
 
   [data-app-sidebar-stacked='true'] {
     --kt-app-sidebar-width: calc(
-      var(--kt-app-sidebar-primary-width) + var(--kt-app-sidebar-secondary-width, 0)
+      var(--kt-app-sidebar-primary-width) + var(--kt-app-sidebar-secondary-width)
     );
   }
 
@@ -117,10 +118,10 @@
     [data-app-sidebar-minimize='on'] & {
       transition: $app-sidebar-base-transition;
 
-      //background-color: var(--kt-app-sidebar-minimize-bg-color);
-      //box-shadow: var(--kt-app-sidebar-minimize-box-shadow);
-      //border-left: var(--kt-app-sidebar-minimize-border-start);
-      //border-right: var(--kt-app-sidebar-minimize-border-end);
+      background-color: var(--kt-app-sidebar-minimize-bg-color);
+      box-shadow: var(--kt-app-sidebar-minimize-box-shadow);
+      border-left: var(--kt-app-sidebar-minimize-border-start);
+      border-right: var(--kt-app-sidebar-minimize-border-end);
 
       @include property(margin-left, $app-sidebar-minimize-gap-start);
       @include property(margin-right, $app-sidebar-minimize-gap-end);
@@ -205,6 +206,11 @@
     display: none;
     width: var(--kt-app-sidebar-width);
 
+    background-color: var(--kt-app-sidebar-base-bg-color-mobile);
+    box-shadow: var(--kt-app-sidebar-base-box-shadow-mobile);
+    border-left: var(--kt-app-sidebar-base-border-start-mobile);
+    border-right: var(--kt-app-sidebar-base-border-end-mobile);
+
     @include property(z-index, $app-sidebar-base-z-index-mobile);
     @include property(margin-left, $app-sidebar-base-gap-start-mobile);
     @include property(margin-right, $app-sidebar-base-gap-end-mobile);
@@ -221,12 +227,6 @@
     --kt-app-sidebar-gap-end: #{$app-sidebar-base-gap-end-mobile};
     --kt-app-sidebar-gap-top: #{$app-sidebar-base-gap-top-mobile};
     --kt-app-sidebar-gap-bottom: #{$app-sidebar-base-gap-bottom-mobile};
-  }
-
-  [data-app-sidebar-stacked='true'] {
-    --kt-app-sidebar-width: calc(
-      var(--kt-app-sidebar-primary-width) + var(--kt-app-sidebar-secondary-width, 0)
-    );
   }
 
   [data-app-sidebar-minimize-mobile='on'] {
@@ -251,10 +251,10 @@
     [data-app-sidebar-minimize-mobile='on'] & {
       transition: $app-sidebar-base-transition;
 
-      //background-color: var(--kt-app-sidebar-minimize-bg-color-mobilee);
-      //box-shadow: var(--kt-app-sidebar-minimize-box-shadow-mobile);
-      //border-left: var(--kt-app-sidebar-minimize-border-start-mobile);
-      //border-right: var(--kt-app-sidebar-minimize-border-end-mobile);
+      background-color: var(--kt-app-sidebar-minimize-bg-color-mobilee);
+      box-shadow: var(--kt-app-sidebar-minimize-box-shadow-mobile);
+      border-left: var(--kt-app-sidebar-minimize-border-start-mobile);
+      border-right: var(--kt-app-sidebar-minimize-border-end-mobile);
 
       @include property(margin-left, $app-sidebar-minimize-gap-start-mobile);
       @include property(margin-right, $app-sidebar-minimize-gap-end-mobile);

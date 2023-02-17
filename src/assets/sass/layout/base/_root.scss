@@ -50,15 +50,15 @@
     @include property(--kt-app-header-primary-sticky-border-top, $app-header-primary-sticky-border-top);
     @include property(--kt-app-header-primary-sticky-border-bottom, $app-header-primary-sticky-border-bottom);
 
-    // Header secondary base
+    // Header secondary
     @include property(--kt-app-header-secondary-base-bg-color, $app-header-secondary-base-bg-color);
     @include property(--kt-app-header-secondary-base-bg-color-mobile, $app-header-secondary-base-bg-color-mobile);
     @include property(--kt-app-header-secondary-base-box-shadow, $app-header-secondary-base-box-shadow);
     @include property(--kt-app-header-secondary-base-box-shadow-mobile, $app-header-secondary-base-box-shadow-mobile);
     @include property(--kt-app-header-secondary-base-border-top, $app-header-secondary-base-border-top);
     @include property(--kt-app-header-secondary-base-border-bottom, $app-header-secondary-base-border-bottom);
-    @include property(--kt-app-header-secondary-base-border-top-mobile, $app-header-secondary-base-border-top-mobile);
-    @include property(--kt-app-header-secondary-base-border-bottom-mobile, $app-header-secondary-base-border-bottom-mobile);
+    @include property(--kt-app-header-secondary-base-border-start-mobile, $app-header-secondary-base-border-bottom);
+    @include property(--kt-app-header-secondary-base-border-end-mobile, $app-header-secondary-base-border-end-mobile);
 
     // Header secondary minimize
     @include property(--kt-app-header-secondary-minimize-bg-color, $app-header-secondary-minimize-bg-color);
@@ -71,28 +71,6 @@
     @include property(--kt-app-header-secondary-sticky-box-shadow, $app-header-secondary-sticky-box-shadow);
     @include property(--kt-app-header-secondary-sticky-border-top, $app-header-secondary-sticky-border-top);
     @include property(--kt-app-header-secondary-sticky-border-bottom, $app-header-secondary-sticky-border-bottom);
-
-    // Header tertiary base
-    @include property(--kt-app-header-tertiary-base-bg-color, $app-header-tertiary-base-bg-color);     
-    @include property(--kt-app-header-tertiary-base-bg-color-mobile, $app-header-tertiary-base-bg-color-mobile);
-    @include property(--kt-app-header-tertiary-base-box-shadow, $app-header-tertiary-base-box-shadow);
-    @include property(--kt-app-header-tertiary-base-box-shadow-mobile, $app-header-tertiary-base-box-shadow-mobile);
-    @include property(--kt-app-header-tertiary-base-border-top, $app-header-tertiary-base-border-top);
-    @include property(--kt-app-header-tertiary-base-border-bottom, $app-header-tertiary-base-border-bottom);
-    @include property(--kt-app-header-tertiary-base-border-top-mobile, $app-header-tertiary-base-border-top-mobile);
-    @include property(--kt-app-header-tertiary-base-border-bottom-mobile, $app-header-tertiary-base-border-bottom-mobile);
-
-    // Header tertiary minimize
-    @include property(--kt-app-header-tertiary-minimize-bg-color, $app-header-tertiary-minimize-bg-color);
-    @include property(--kt-app-header-tertiary-minimize-box-shadow, $app-header-tertiary-minimize-box-shadow);
-    @include property(--kt-app-header-tertiary-minimize-border-top, $app-header-tertiary-minimize-border-top);
-    @include property(--kt-app-header-tertiary-minimize-border-bottom, $app-header-tertiary-minimize-border-bottom);
-
-    // Header tertiary sticky
-    @include property(--kt-app-header-tertiary-sticky-bg-color, $app-header-tertiary-sticky-bg-color);
-    @include property(--kt-app-header-tertiary-sticky-box-shadow, $app-header-tertiary-sticky-box-shadow);
-    @include property(--kt-app-header-tertiary-sticky-border-top, $app-header-tertiary-sticky-border-top);
-    @include property(--kt-app-header-tertiary-sticky-border-bottom, $app-header-tertiary-sticky-border-bottom);
 
     // Toolbar base
     @include property(--kt-app-toolbar-base-bg-color, $app-toolbar-base-bg-color);
@@ -133,12 +111,6 @@
     @include property(--kt-app-sidebar-base-border-start-mobile, $app-sidebar-base-border-start-mobile);
     @include property(--kt-app-sidebar-base-border-end, $app-sidebar-base-border-end);
     @include property(--kt-app-sidebar-base-border-end-mobile, $app-sidebar-base-border-end-mobile);
-
-    // Hero
-    @include property(--kt-app-hero-bg-color, $app-hero-bg-color);
-    @include property(--kt-app-hero-box-shadow, $app-hero-box-shadow);
-    @include property(--kt-app-hero-border-top, $app-hero-border-top);
-    @include property(--kt-app-hero-border-bottom, $app-hero-border-bottom);
 
     // Sidebar sticky
     @include property(--kt-app-sidebar-sticky-bg-color, $app-sidebar-sticky-bg-color);
@@ -320,49 +292,25 @@
     @include property(--kt-app-header-primary-sticky-border-top, $app-header-primary-sticky-border-top-dark);
     @include property(--kt-app-header-primary-sticky-border-bottom, $app-header-primary-sticky-border-bottom-dark);
 
-    // Header secondary base
+    // Header secondary
     @include property(--kt-app-header-secondary-base-bg-color, $app-header-secondary-base-bg-color-dark);
     @include property(--kt-app-header-secondary-base-bg-color-mobile, $app-header-secondary-base-bg-color-mobile-dark);
     @include property(--kt-app-header-secondary-base-box-shadow, $app-header-secondary-base-box-shadow-dark);
     @include property(--kt-app-header-secondary-base-box-shadow-mobile, $app-header-secondary-base-box-shadow-mobile-dark);
     @include property(--kt-app-header-secondary-base-border-top, $app-header-secondary-base-border-top-dark);
     @include property(--kt-app-header-secondary-base-border-bottom, $app-header-secondary-base-border-bottom-dark);
-    @include property(--kt-app-header-secondary-base-border-top-mobile, $app-header-secondary-base-border-top-dark);
-    @include property(--kt-app-header-secondary-base-border-bottom-mobile, $app-header-secondary-base-border-bottom-mobile-dark);
+    @include property(--kt-app-header-secondary-base-border-start-mobile, $app-header-secondary-base-border-bottom-dark);
+    @include property(--kt-app-header-secondary-base-border-end-mobile, $app-header-secondary-base-border-end-mobile-dark);
 
-    // Header secondary minimize
     @include property(--kt-app-header-secondary-minimize-bg-color, $app-header-secondary-minimize-bg-color-dark);
     @include property(--kt-app-header-secondary-minimize-box-shadow, $app-header-secondary-minimize-box-shadow-dark);
     @include property(--kt-app-header-secondary-minimize-border-top, $app-header-secondary-minimize-border-top-dark);
     @include property(--kt-app-header-secondary-minimize-border-bottom, $app-header-secondary-minimize-border-bottom-dark);
 
-    // Header secondary sticky
     @include property(--kt-app-header-secondary-sticky-bg-color, $app-header-secondary-sticky-bg-color-dark);
     @include property(--kt-app-header-secondary-sticky-box-shadow, $app-header-secondary-sticky-box-shadow-dark);
     @include property(--kt-app-header-secondary-sticky-border-top, $app-header-secondary-sticky-border-top-dark);
     @include property(--kt-app-header-secondary-sticky-border-bottom, $app-header-secondary-sticky-border-bottom-dark);
-
-    // Header tertiary base
-    @include property(--kt-app-header-tertiary-base-bg-color, $app-header-tertiary-base-bg-color-dark);     
-    @include property(--kt-app-header-tertiary-base-bg-color-mobile, $app-header-tertiary-base-bg-color-mobile-dark);
-    @include property(--kt-app-header-tertiary-base-box-shadow, $app-header-tertiary-base-box-shadow-dark);
-    @include property(--kt-app-header-tertiary-base-box-shadow-mobile, $app-header-tertiary-base-box-shadow-mobile-dark);
-    @include property(--kt-app-header-tertiary-base-border-top, $app-header-tertiary-base-border-top-dark);
-    @include property(--kt-app-header-tertiary-base-border-bottom, $app-header-tertiary-base-border-bottom-dark);
-    @include property(--kt-app-header-tertiary-base-border-top-mobile, $app-header-tertiary-base-border-top-dark);
-    @include property(--kt-app-header-tertiary-base-border-bottom-mobile, $app-header-tertiary-base-border-bottom-mobile-dark);
-
-    // Header tertiary minimize
-    @include property(--kt-app-header-tertiary-minimize-bg-color, $app-header-tertiary-minimize-bg-color-dark);
-    @include property(--kt-app-header-tertiary-minimize-box-shadow, $app-header-tertiary-minimize-box-shadow-dark);
-    @include property(--kt-app-header-tertiary-minimize-border-top, $app-header-tertiary-minimize-border-top-dark);
-    @include property(--kt-app-header-tertiary-minimize-border-bottom, $app-header-tertiary-minimize-border-bottom-dark);
-
-    // Header tertiary sticky
-    @include property(--kt-app-header-tertiary-sticky-bg-color, $app-header-tertiary-sticky-bg-color-dark);
-    @include property(--kt-app-header-tertiary-sticky-box-shadow, $app-header-tertiary-sticky-box-shadow-dark);
-    @include property(--kt-app-header-tertiary-sticky-border-top, $app-header-tertiary-sticky-border-top-dark);
-    @include property(--kt-app-header-tertiary-sticky-border-bottom, $app-header-tertiary-sticky-border-bottom-dark);
 
     // Toolbar base
     @include property(--kt-app-toolbar-base-bg-color, $app-toolbar-base-bg-color-dark);
@@ -393,12 +341,6 @@
     @include property(--kt-app-toolbar-sticky-border-top-mobile, $app-toolbar-sticky-border-top-mobile-dark);
     @include property(--kt-app-toolbar-sticky-border-bottom, $app-toolbar-sticky-border-bottom-dark);
     @include property(--kt-app-toolbar-sticky-border-bottom-mobile, $app-toolbar-sticky-border-bottom-mobile-dark);
-
-    // Hero
-    @include property(--kt-app-hero-bg-color, $app-hero-bg-color-dark);
-    @include property(--kt-app-hero-box-shadow, $app-hero-box-shadow-dark);
-    @include property(--kt-app-hero-border-top, $app-hero-border-top-dark);
-    @include property(--kt-app-hero-border-bottom, $app-hero-border-bottom-dark);
 
     // Sidebar base
     @include property(--kt-app-sidebar-base-bg-color, $app-sidebar-base-bg-color-dark);

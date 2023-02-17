@@ -69,4 +69,4 @@ const HeaderUserMenu = () => {
   )
 }
 
-export {HeaderUserMenu}
+export default HeaderUserMenu

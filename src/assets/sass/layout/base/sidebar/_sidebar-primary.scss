@@ -7,10 +7,6 @@
   transition: $app-sidebar-primary-base-transition;
   position: relative;
   flex-shrink: 0;
-  background-color: var(--kt-app-sidebar-primary-base-bg-color);
-  box-shadow: var(--kt-app-sidebar-primary-base-box-shadow);
-  border-left: var(--kt-app-sidebar-primary-base-border-start);
-  border-right: var(--kt-app-sidebar-primary-base-border-end);
 }
 
 // Utilities
@@ -25,6 +21,11 @@
 @include media-breakpoint-up(lg) {
   // Base
   .app-sidebar-primary {
+    background-color: var(--kt-app-sidebar-primary-base-bg-color);
+    box-shadow: var(--kt-app-sidebar-primary-base-box-shadow);
+    border-left: var(--kt-app-sidebar-primary-base-border-start);
+    border-right: var(--kt-app-sidebar-primary-base-border-end);
+
     @include property(z-index, $app-sidebar-primary-base-z-index);
     @include property(margin-left, $app-sidebar-primary-base-gap-start);
     @include property(margin-right, $app-sidebar-primary-base-gap-end);
@@ -72,10 +73,10 @@
     [data-app-sidebar-primary-minimize='on'] & {
       transition: $app-sidebar-primary-base-transition;
 
-      //background-color: var(--kt-app-sidebar-primary-minimize-bg-color);
-      //box-shadow: var(--kt-app-sidebar-primary-minimize-box-shadow);
-      //border-left: var(--kt-app-sidebar-primary-minimize-border-start);
-      //border-right: var(--kt-app-sidebar-primary-minimize-border-end);
+      background-color: var(--kt-app-sidebar-primary-minimize-bg-color);
+      box-shadow: var(--kt-app-sidebar-primary-minimize-box-shadow);
+      border-left: var(--kt-app-sidebar-primary-minimize-border-start);
+      border-right: var(--kt-app-sidebar-primary-minimize-border-end);
 
       @include property(margin-left, $app-sidebar-primary-minimize-gap-start);
       @include property(margin-right, $app-sidebar-primary-minimize-gap-end);
@@ -140,6 +141,12 @@
   // Base
   .app-sidebar-primary {
     @include property(z-index, $app-sidebar-primary-base-z-index-mobile);
+
+    background-color: var(--kt-app-sidebar-primary-base-bg-color-mobile);
+    box-shadow: var(--kt-app-sidebar-primary-base-box-shadow-mobile);
+    border-left: var(--kt-app-sidebar-primary-base-border-start-mobile);
+    border-right: var(--kt-app-sidebar-primary-base-border-end-mobile);
+
     @include property(margin-left, $app-sidebar-primary-base-gap-start-mobile);
     @include property(margin-right, $app-sidebar-primary-base-gap-end-mobile);
     @include property(margin-top, $app-sidebar-primary-base-gap-top-mobile);
@@ -185,11 +192,10 @@
 
     [data-app-sidebar-primary-minimize-mobile='on'] & {
       transition: $app-sidebar-primary-base-transition;
-
-      //background-color: var(--kt-app-sidebar-primary-minimize-bg-color-mobile);
-      //box-shadow: var(--kt-app-sidebar-primary-base-box-shadow-mobile);
-      //border-left: var(--kt-app-sidebar-primary-minimize-border-start-mobile);
-      //border-left: var(--kt-app-sidebar-primary-minimize-border-end-mobile);
+      background-color: var(--kt-app-sidebar-primary-minimize-bg-color-mobile);
+      box-shadow: var(--kt-app-sidebar-primary-base-box-shadow-mobile);
+      border-left: var(--kt-app-sidebar-primary-minimize-border-start-mobile);
+      border-left: var(--kt-app-sidebar-primary-minimize-border-end-mobile);
 
       @include property(margin-left, $app-sidebar-primary-minimize-gap-start-mobile);
       @include property(margin-right, $app-sidebar-primary-minimize-gap-end-mobile);

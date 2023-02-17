@@ -62,16 +62,7 @@
 }
 
 .form-check-label {
-	color: var(--kt-form-check-label-color);
-}
-
-.form-check-input {
-	&:checked {
-		& + span,
-		& + label {
-			color: var(--kt-form-check-label-color-checked);
-		}
-	}
+	color: var(--kt-orm-check-label-color);
 }
 
 //

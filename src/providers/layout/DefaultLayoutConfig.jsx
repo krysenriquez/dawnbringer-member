@@ -27,14 +27,35 @@ export const DefaultLayoutConfig = {
       },
       container: {
         width: 'fluid',
-        class: 'd-flex align-items-stretch justify-content-between',
-      },
-      topbar: {
-        class: 'flex-lg-grow-1 justify-content-end',
+        class: 'd-flex align-items-stretch justify-content-between container-xxl',
+        mobileToggle: {
+          class: 'd-flex align-items-center d-block d-lg-none ms-n3',
+        },
+        headerLogo: {
+          class: 'd-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15',
+        },
+        navbar: {
+          class: 'd-flex align-items-stretch justify-content-between flex-lg-grow-1',
+          menu: {
+            class: 'align-items-stretch',
+            attributes: {
+              'data-drawer': 'true',
+              'data-drawer-name': 'app-header-menu',
+              'data-drawer-activate': '{default: true, lg: false}',
+              'data-drawer-overlay': 'true',
+              'data-drawer-width': "{default:'200px', '300px': '250px'}",
+              'data-drawer-direction': 'start',
+              'data-drawer-toggle': '#app_header_menu_mobile_toggle',
+            },
+          },
+          topbar: {
+            class: 'flex-lg-grow-1 justify-content-end',
+          },
+        },
       },
     },
     sidebar: {
-      display: true,
+      display: false,
       class: 'flex-column',
       push: {
         header: true,
@@ -75,25 +96,25 @@ export const DefaultLayoutConfig = {
         },
       },
     },
-    content: {
-      class: 'flex-column-fluid',
-      container: {
-        width: 'fluid',
-      },
-    },
     toolbar: {
       display: true,
       width: 'fluid',
-      class: 'pt-7 pt-lg-10',
+      class: 'py-5 py-lg-15',
       container: {
-        class: 'container-fluid d-flex align-items-stretch',
-      },
-      wrapper: {
-        class: 'd-flex flex-stack flex-wrap gap-4 w-100',
+        class: 'd-flex align-items-stretch container-xxl',
+        wrapper: {
+          class: 'd-flex flex-stack flex-wrap gap-4 w-100',
+        },
       },
       fixed: {
         desktop: true,
         tabletAndMobileMode: false,
+      },
+    },
+    content: {
+      class: 'd-flex flex-column-fluid align-items-start container-xxl ',
+      container: {
+        class: 'content flex-row-fluid',
       },
     },
     footer: {
@@ -101,7 +122,7 @@ export const DefaultLayoutConfig = {
       container: {
         width: 'fluid',
         class:
-          'container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3 justify-content-end',
+          'container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3 justify-content-end container-xxl',
       },
     },
     pageTitle: {

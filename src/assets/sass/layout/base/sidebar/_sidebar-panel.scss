@@ -5,10 +5,6 @@
 // General mode
 .app-sidebar-panel {
   transition: $app-sidebar-panel-base-transition;
-  background-color: var(--kt-app-sidebar-panel-base-bg-color);
-  box-shadow: var(--kt-app-sidebar-panel-base-box-shadow);
-  border-left: var(--kt-app-sidebar-panel-base-border-start);
-  border-right: var(--kt-app-sidebar-panel-base-border-end);
 }
 
 // Utilities
@@ -27,6 +23,10 @@
     display: flex;
     flex-shrink: 0;
     width: var(--kt-app-sidebar-panel-width);
+    background-color: var(--kt-app-sidebar-panel-base-bg-color);
+    box-shadow: var(--kt-app-sidebar-panel-base-box-shadow);
+    border-left: var(--kt-app-sidebar-panel-base-border-start);
+    border-right: var(--kt-app-sidebar-panel-base-border-end);
 
     @include property(z-index, $app-sidebar-panel-base-z-index);
     @include property(margin-left, $app-sidebar-panel-base-gap-start);
@@ -100,9 +100,9 @@
       bottom: 0;
       transition: $app-sidebar-panel-base-transition;
 
-      //box-shadow: var(--kt-app-sidebar-panel-sticky-box-shadow);
-      //border-left: var(--kt-app-sidebar-panel-sticky-border-start);
-      //border-right: var(--kt-app-sidebar-panel-sticky-border-end);
+      box-shadow: var(--kt-app-sidebar-panel-sticky-box-shadow);
+      border-left: var(--kt-app-sidebar-panel-sticky-border-start);
+      border-right: var(--kt-app-sidebar-panel-sticky-border-end);
 
       @include property(z-index, $app-sidebar-panel-sticky-z-index);
       @include property(margin-left, $app-sidebar-panel-sticky-gap-start);
@@ -113,11 +113,10 @@
 
     [data-app-sidebar-panel-minimize='on'] & {
       transition: $app-sidebar-panel-base-transition;
-
-      //background-color: var(--kt-app-sidebar-panel-minimize-bg-color);
-      //box-shadow: var(--kt-app-sidebar-panel-minimize-box-shadow);
-      //border-left: var(--kt-app-sidebar-panel-minimize-border-start);
-      //border-right: var(--kt-app-sidebar-panel-minimize-border-end);
+      background-color: var(--kt-app-sidebar-panel-minimize-bg-color);
+      box-shadow: var(--kt-app-sidebar-panel-minimize-box-shadow);
+      border-left: var(--kt-app-sidebar-panel-minimize-border-start);
+      border-right: var(--kt-app-sidebar-panel-minimize-border-end);
 
       @include property(margin-left, $app-sidebar-panel-minimize-gap-start);
       @include property(margin-right, $app-sidebar-panel-minimize-gap-end);
@@ -205,6 +204,11 @@
   .app-sidebar-panel {
     display: none;
     width: var(--kt-app-sidebar-panel-width);
+
+    background-color: var(--kt-app-sidebar-panel-base-bg-color-mobile);
+    box-shadow: var(--kt-app-sidebar-panel-base-box-shadow-mobile);
+    border-left: var(--kt-app-sidebar-panel-base-border-start-mobile);
+    border-right: var(--kt-app-sidebar-panel-base-border-end-mobile);
 
     @include property(z-index, $app-sidebar-panel-base-z-index-mobile);
     @include property(margin-left, $app-sidebar-panel-base-gap-start-mobile);

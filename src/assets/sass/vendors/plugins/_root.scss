@@ -17,7 +17,7 @@
 	--kt-highlight-btn-color-hover: #{$highlight-btn-color-hover};
 
 	--kt-highlight-scrollbar-color: #{$highlight-scrollbar-color};
-	--kt-highlight-scrollbar-color-hover: #{$highlight-scrollbar-color-hover};
+	--kt-highlight-scrollbar-color: #{$highlight-scrollbar-hover-color};
 }
 
 [data-theme="dark"] {
@@ -32,5 +32,5 @@
 	--kt-highlight-btn-color-hover: #{$highlight-btn-color-hover-dark};
 
 	--kt-highlight-scrollbar-color: #{$highlight-scrollbar-color-dark};
-	--kt-highlight-scrollbar-color-hover: #{$highlight-scrollbar-color-hover-dark};
+	--kt-highlight-scrollbar-color-hover: #{$highlight-scrollbar-hover-color-dark};
 }

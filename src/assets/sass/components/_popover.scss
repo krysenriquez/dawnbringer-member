@@ -23,8 +23,8 @@
         position: absolute;
         top: $popover-dissmis-btn-top;
         right: $popover-dissmis-btn-end;
-        height: $popover-dissmis-btn-size;
-        width: $popover-dissmis-btn-size;
+        height: $popover-dissmis-btn-height;
+        width: $popover-dissmis-btn-height;
         @include svg-bg-icon(close, var(--kt-gray-500)); // todo: revise
         mask-size: 50%;
         -webkit-mask-size: 50%;
@@ -34,7 +34,7 @@
         }
 
         & + .popover-header {
-            padding-right: $popover-body-padding-x + $popover-dissmis-btn-size;
+            padding-right: $popover-body-padding-x + $popover-dissmis-btn-height;
         }
     }
 }

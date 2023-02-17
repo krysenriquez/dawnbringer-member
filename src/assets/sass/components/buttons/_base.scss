@@ -12,8 +12,8 @@
 	outline: none !important;	
 
 	// Reset focus shadow
-	&:not(.btn-shadow):not(.shadow):not(.shadow-sm):not(.shadow-lg):not(.shadow-xs) {
-		box-shadow: none;
+	&:not(.btn-shadow):not(.shadow):not(.shadow-sm):not(.shadow-lg) {
+		box-shadow: none !important;
 	}
 
 	// Remove border
@@ -74,15 +74,6 @@
 	} 
 }
 
-// Reset
-.btn-reset {
-	background-color: transparent;
-	border: 0;
-	box-shadow: none;
-	user-select: none;
-	outline: none;
-}
-
 // Icons
 .btn {
 	// Font icon
@@ -137,5 +128,42 @@
 			margin: 0;
 			line-height: 1;
 		}
+	}
+}
+
+// Hover effects
+.btn.btn-hover-rise {
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: translateY(-10%);
+		transition: transform 0.3s ease;
+	}
+}
+
+.btn.btn-hover-scale {
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: scale(1.1);
+		transition: transform 0.3s ease;
+	}
+}
+
+.btn.btn-hover-rotate-end {
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: rotate(4deg);
+		transition: transform 0.3s ease;
+	}
+}
+
+.btn.btn-hover-rotate-start {
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: rotate(-4deg);
+		transition: transform 0.3s ease;
 	}
 }

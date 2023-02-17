@@ -1,4 +1,4 @@
-const AUTH_LOCAL_STORAGE_KEY = import.meta.env.VITE_APP_PREFIX + 'a_token'
+const AUTH_LOCAL_STORAGE_KEY = import.meta.env.VITE_APP_PREFIX + 'm_token'
 const AUTH_LOCAL_STORAGE_KEY_DURATION = 1000 * 60 * 4
 
 const getAuth = () => {

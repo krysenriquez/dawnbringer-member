@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 import {useLayout} from '@/providers/layout/LayoutProvider'
-import {DefaultTitle} from '../Header/Topbar/components/page-title/DefaultTitle'
+import DefaultTitle from '../Header/Topbar/components/page-title/DefaultTitle'
 
-export default function Toolbar() {
+const Toolbar = () => {
   const {classes, config} = useLayout()
 
   return (
@@ -14,10 +14,12 @@ export default function Toolbar() {
           config.app.toolbar.container.class
         )}
       >
-        <div className={clsx('app-toolbar-wrapper', config.app.toolbar.wrapper.class)}>
+        <div className={clsx('app-toolbar-wrapper', config.app.toolbar.container.wrapper.class)}>
           {config.app.pageTitle?.display && <DefaultTitle />}
         </div>
       </div>
     </div>
   )
 }
+
+export default Toolbar

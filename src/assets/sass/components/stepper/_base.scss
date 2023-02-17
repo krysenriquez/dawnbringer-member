@@ -21,10 +21,6 @@
 
   // States
   & {
-    [data-stepper-action='final'] {
-      display: none;
-    }
-
     [data-stepper-action='previous'] {
       display: none;
     }
@@ -67,28 +63,12 @@
   }
 
   &.last {
-    [data-stepper-action='final'] {
-      display: inline-block;
-    }
-
-    [data-stepper-action='final'].btn-flex {
-      display: flex;
-    }
-
     [data-stepper-action='previous'] {
       display: inline-block;
     }
 
-    [data-stepper-action='previous'].btn-flex {
-      display: flex;
-    }
-
     [data-stepper-action='next'] {
       display: none;
-    }
-
-    [data-stepper-action='next'].btn-flex {
-      display: flex;
     }
 
     [data-stepper-action='submit'] {

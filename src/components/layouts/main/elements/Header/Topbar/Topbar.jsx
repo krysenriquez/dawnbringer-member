@@ -2,14 +2,14 @@ import clsx from 'clsx'
 import {useLayout} from '@/providers/layout/LayoutProvider'
 import {HeaderNotificationsMenu} from './components/menus/HeaderNotificationsMenu'
 import {HeaderNotifications} from './components/HeaderNotifications/HeaderNotifications'
-import {HeaderThemeModeSwitcher} from './components/HeaderThemeModeSwitcher/ThemeModeSwitcher'
-import {HeaderUserMenu} from './components/menus/HeaderUserMenu'
+import HeaderThemeModeSwitcher from './components/HeaderThemeModeSwitcher/ThemeModeSwitcher'
+import HeaderUserMenu from './components/menus/HeaderUserMenu'
 
 const Topbar = () => {
   const {config} = useLayout()
 
   return (
-    <div className={clsx('app-navbar', config.app.header.topbar.class)}>
+    <div className={clsx('app-navbar', config.app.header.container.navbar.topbar.class)}>
       <div className='app-navbar-item ms-5'>
         <HeaderThemeModeSwitcher />
       </div>
@@ -20,4 +20,4 @@ const Topbar = () => {
   )
 }
 
-export {Topbar}
+export default Topbar

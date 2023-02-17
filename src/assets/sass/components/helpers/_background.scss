@@ -56,11 +56,6 @@
 		background-color: var(--kt-#{$name}) !important;
 	}
 
-	.bg-#{$name}-active {
-		--kt-bg-rgb-color: var(--kt-#{$name}-active-rgb);
-		background-color: var(--kt-#{$name}-active) !important;
-	}
-
 	@if (theme-light-color($name)) {
 		.bg-hover-light-#{$name} {
 			cursor: pointer;

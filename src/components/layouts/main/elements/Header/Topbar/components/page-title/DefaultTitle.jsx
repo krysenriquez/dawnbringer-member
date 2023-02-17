@@ -9,17 +9,8 @@ const DefaultTitle = () => {
   const {config, classes} = useLayout()
 
   return (
-    <div
-      className={clsx(
-        'page-title d-flex flex-column justify-content-center gap-1 me-3',
-        classes.pageTitle.join(' ')
-      )}
-    >
-      {pageTitle && (
-        <h1 className='page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0'>
-          {pageTitle}
-        </h1>
-      )}
+    <div className={clsx('page-title d-flex flex-column me-3', classes.pageTitle.join(' '))}>
+      {pageTitle && <h1 className='d-flex text-white fw-bold my-1 fs-3'>{pageTitle}</h1>}
       {pageBreadcrumbs &&
         pageBreadcrumbs.length > 0 &&
         config.app.pageTitle &&
@@ -55,4 +46,4 @@ const DefaultTitle = () => {
   )
 }
 
-export {DefaultTitle}
+export default DefaultTitle

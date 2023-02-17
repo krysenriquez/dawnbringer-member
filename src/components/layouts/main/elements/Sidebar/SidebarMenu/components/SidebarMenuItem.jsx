@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
 import {useLocation} from 'react-router'
-import {Tooltip, OverlayTrigger} from 'react-bootstrap'
 import {checkIsActive} from '@/utils/checkIsActive'
 import CustomSVG from '@/components/elements/SVG/CustomSVG'
 import {useLayout} from '@/providers/layout/LayoutProvider'

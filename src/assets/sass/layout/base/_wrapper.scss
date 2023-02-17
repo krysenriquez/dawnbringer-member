@@ -24,15 +24,17 @@
 
     // Toolbar
     [data-app-toolbar-sticky='on'] & {
-      margin-top: var(--kt-app-toolbar-height);
+      margin-top: var(--kt-app-toolbar-height-actual, 0px);
     }
 
     [data-app-header-fixed='true'][data-app-toolbar-sticky='on'] & {
-      margin-top: calc(var(--kt-app-header-height-actual) + var(--kt-app-toolbar-height-actual));
+      margin-top: calc(
+        var(--kt-app-header-height-actual) + var(--kt-app-toolbar-height-actual, 0px)
+      );
     }
 
     [data-app-header-fixed='true'][data-app-toolbar-fixed='true'] & {
-      margin-top: calc(var(--kt-app-header-height) + var(--kt-app-toolbar-height));
+      margin-top: calc(var(--kt-app-header-height) + var(--kt-app-toolbar-height, 0px));
     }
 
     // Sidebar
@@ -74,7 +76,7 @@
     transition: $app-wrapper-transition;
 
     // Header
-    [data-app-header-sticky='on'] & {
+    [data-app-header-sticky-mobile='on'] & {
       margin-top: var(--kt-app-header-height-actual);
     }
 
@@ -83,8 +85,10 @@
     }
 
     // Toolbar
-    [data-app-header-fixed-mobile='true'][data-app-toolbar-sticky='on'] & {
-      margin-top: calc(var(--kt-app-header-height-actual) + var(--kt-app-toolbar-height-actual));
+    [data-app-header-fixed-mobile='true'][data-app-toolbar-sticky-mobile='on'] & {
+      margin-top: calc(
+        var(--kt-app-header-height-actual) + var(--kt-app-toolbar-height-actual, 0px)
+      );
     }
 
     // Footer

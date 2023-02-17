@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import CustomSVG from '@/components/elements/SVG/CustomSVG'
 import {useThemeMode, systemMode} from '@/providers/ThemeModeProvider'
 
-export const HeaderThemeModeSwitcher = () => {
+const HeaderThemeModeSwitcher = () => {
   const {mode, menuMode, updateMode, updateMenuMode} = useThemeMode()
   const calculatedMode = mode === 'system' ? systemMode : mode
   const switchMode = (_mode) => {
@@ -75,3 +75,5 @@ export const HeaderThemeModeSwitcher = () => {
     </>
   )
 }
+
+export default HeaderThemeModeSwitcher

@@ -14,7 +14,7 @@ const Content = ({children}) => {
 
   return (
     <div className={clsx('app-content', classes.content.join(' '), config.app.content.class)}>
-      <div className={clsx('app-container', classes.contentContainer.join(' '))}>{children}</div>
+      <div className={clsx(config.app.content.container.class)}>{children}</div>
     </div>
   )
 }

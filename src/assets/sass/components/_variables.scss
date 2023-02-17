@@ -9,9 +9,9 @@ $white: #ffffff !default;
 $black:#000000 !default;
 
 // Bootstrap grey colors
-$gray-100: #F9F9F9 !default;
-$gray-200: #F4F4F4 !default;
-$gray-300: #E1E3EA !default;
+$gray-100: #f5f8fa !default;
+$gray-200: #eff2f5 !default;
+$gray-300: #E4E6EF !default;
 $gray-400: #B5B5C3 !default;
 $gray-500: #A1A5B7 !default;
 $gray-600: #7E8299 !default;
@@ -309,8 +309,8 @@ $link-color:                $primary !default;
 $link-color-dark:           $primary !default;
 $link-decoration:           none !default;
 $link-shade-percentage:     20% !default;
-$link-hover-color:          $primary-active !default;
-$link-hover-color-dark:     $primary-active !default;
+$link-hover-color:          shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-color-dark:     shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:     none !default;
 
 
@@ -681,8 +681,8 @@ $input-focus-width:                     	$input-btn-focus-width !default;
 //$input-focus-box-shadow:                  none !default;
 //$input-focus-box-shadow-dark:             none !default;
 
-$input-disabled-color:                      $gray-500 !default;
-$input-disabled-color-dark:                 $gray-500-dark !default;
+$input-disabled-color:                      null !default;
+$input-disabled-color-dark:                 null !default;
 $input-disabled-bg:                         $gray-200 !default;
 $input-disabled-bg-dark:                    $gray-200-dark !default;
 $input-disabled-border-color:               $input-border-color !default;
@@ -712,10 +712,8 @@ $form-check-min-height:                     $font-size-base * $line-height-base 
 $form-check-padding-start:                  $form-check-input-width + .5rem !default;
 $form-check-padding-left:                   $form-check-input-width + .5rem !default;
 $form-check-margin-bottom:                  .125rem !default;
-$form-check-label-color:                    $gray-500 !default;
-$form-check-label-color-dark:               $gray-500-dark !default;
-$form-check-label-color-checked:            $gray-700 !default;
-$form-check-label-color-checked-dark:       $gray-700-dark !default;
+$form-check-label-color:                    null !default;
+$form-check-label-color-dark:               null !default;
 $form-check-label-cursor:                   null !default;
 $form-check-transition:                     null !default;
 $form-check-inline-margin-right:            1rem !default;
@@ -812,8 +810,8 @@ $form-select-color:                                 $input-color !default;
 $form-select-color-dark:                            $input-color-dark !default;
 $form-select-bg:                                    $input-bg !default;
 $form-select-bg-dark:                               $input-bg-dark !default;
-$form-select-disabled-color:                        $input-disabled-color !default;
-$form-select-disabled-color-dark:                   $input-disabled-color-dark !default;
+$form-select-disabled-color:                        null !default;
+$form-select-disabled-color-dark:                   null !default;
 $form-select-disabled-bg:                           $gray-200 !default;
 $form-select-disabled-bg-dark:                      $gray-200-dark !default;
 $form-select-disabled-border-color:                 $input-disabled-border-color !default;
@@ -851,7 +849,7 @@ $form-file-button-hover-bg-dark:                    shade-color($form-file-butto
 // Form floating
 $input-height-border:                   			$input-border-width * 2 !default;
 $form-floating-height:            					calc(3.75rem + #{$input-height-border}) !default;
-$form-floating-input-padding-t:                     1.85rem !default;
+$form-floating-input-padding-t:                     2.15rem !default;
 
 
 // Navs
@@ -1060,7 +1058,7 @@ $popover-body-color-dark:    			$gray-800-dark !default;
 $popover-body-padding-y:                1.25rem !default;
 $popover-body-padding-x:                1.25rem !default;
 
-$popover-dissmis-btn-size:            	1.25rem !default; 
+$popover-dissmis-btn-height:            1.5rem !default; 
 $popover-dissmis-btn-top:               0.85rem !default; 
 $popover-dissmis-btn-end:               0.85rem !default; 
 
@@ -1219,7 +1217,7 @@ $carousel-custom-bullet-indicator-active-bg-color-dark:         $gray-600-dark !
 
 
 // Spinners
-$spinner-border-width:   					.185rem !default;
+$spinner-border-width:   					.185em !default;
 $spinner-animation-speed:   				.65s !default;
 $spinner-border-width-sm:   				.145em !default;
 
@@ -1379,7 +1377,6 @@ $symbol-sizes: (
 	65px: 65px,
 	70px: 70px,
 	75px: 75px,
-	90px: 90px,
 	100px:100px,
 	125px:125px,
 	150px:150px,
@@ -1502,9 +1499,9 @@ $feedback-popup-transition-speed: 0.6s !default;
 $feedback-popup-padding: 1rem 1.25rem !default;
 
 // Keenthemes scrollbar component 
-$scrollbar-size: 5px !default;
-$scrollbar-overlay-size: 19px !default;
-$scrollbar-overlay-space: 7px !default;
+$scrollbar-space: 0.5rem !default;
+$scrollbar-width: 0.4rem !default;
+$scrollbar-height: 0.4rem !default;
 $scrollbar-color: $gray-200 !default;
 $scrollbar-color-dark: $gray-200-dark !default;
 $scrollbar-hover-color: darken($gray-200, 2%) !default;
@@ -1536,14 +1533,6 @@ $ribbon-clip-bg-dark: $light !default;
 
 // Keenthemes fixed component 
 $fixed-z-index: 101 !default;
-
-// Engage panel
-$engage-btn-bg: $body-bg;
-$engage-btn-bg-dark: $gray-200-dark;
-$engage-btn-color: $gray-600;
-$engage-btn-color-dark: $gray-600-dark;
-$engage-btn-color-active: $gray-800;
-$engage-btn-color-active-dark: $gray-800-dark;
 
 // Social Network Colors Used With Boostrap Buttons(see: https://brandcolors.net)
 $social-colors: (

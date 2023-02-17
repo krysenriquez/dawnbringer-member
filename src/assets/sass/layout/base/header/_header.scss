@@ -33,11 +33,10 @@
 
   [data-app-header-sticky='on'][data-app-header-stacked='true'] {
     --kt-app-header-height: calc(
-      var(--kt-app-header-primary-height, 0px) + var(--kt-app-header-secondary-height, 0px) +
-        var(--kt-app-header-tertiary-height, 0px)
+      var(--kt-app-header-primary-height, 0px) + var(--kt-app-header-secondary-height, 0px)
     );
     --kt-app-header-height-actual: calc(
-      #{$app-header-primary-base-height} + #{$app-header-secondary-base-height} + #{$app-header-tertiary-base-height}
+      #{$app-header-primary-base-height} + #{$app-header-secondary-base-height}
     );
   }
 
@@ -64,8 +63,7 @@
     [data-app-header-stacked='true'] & {
       flex-direction: column;
       height: calc(
-        var(--kt-app-header-primary-height) + var(--kt-app-header-secondary-height, 0px) +
-          var(--kt-app-header-tertiary-height, 0px)
+        var(--kt-app-header-primary-height) + var(--kt-app-header-secondary-height, 0px)
       );
     }
 
@@ -75,7 +73,6 @@
       right: 0;
       top: 0;
       @include property(z-index, $app-header-sticky-z-index);
-      @include property(backdrop-filter, $app-header-sticky-backdrop-filter);
 
       background-color: var(--kt-app-header-sticky-bg-color);
       box-shadow: var(--kt-app-header-sticky-box-shadow);
@@ -85,7 +82,6 @@
     [data-app-header-minimize='on'] & {
       transition: $app-header-base-transition;
       @include property(z-index, $app-header-minimize-z-index);
-      @include property(backdrop-filter, $app-header-minimize-backdrop-filter);
 
       background-color: var(--kt-app-header-minimize-bg-color);
       box-shadow: var(--kt-app-header-minimize-box-shadow);
@@ -195,10 +191,6 @@
 
     [data-app-header-stacked='true'] & {
       flex-direction: column;
-      height: calc(
-        var(--kt-app-header-primary-height) + var(--kt-app-header-secondary-height, 0px) +
-          var(--kt-app-header-tertiary-height, 0px)
-      );
     }
 
     [data-app-header-fixed-mobile='true'] & {
@@ -216,7 +208,6 @@
       right: 0;
       top: 0;
       @include property(z-index, $app-header-sticky-z-index-mobile);
-      @include property(backdrop-filter, $app-header-sticky-backdrop-filter-mobile);
 
       background-color: var(--kt-app-header-sticky-bg-color-mobile);
       box-shadow: var(--kt-app-header-sticky-box-shadow-mobile);
@@ -225,8 +216,6 @@
 
     [data-app-header-minimize='on'] & {
       @include property(z-index, $app-header-minimize-z-index-mobile);
-      @include property(backdrop-filter, $app-header-minimize-backdrop-filter-mobile);
-
       transition: $app-header-base-transition;
       background-color: var(--kt-app-header-minimize-bg-color-mobile);
       box-shadow: var(--kt-app-header-minimize-box-shadow-mobile);

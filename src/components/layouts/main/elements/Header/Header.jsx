@@ -1,7 +1,8 @@
 import clsx from 'clsx'
 import {useLayout} from '@/providers/layout/LayoutProvider'
-import {Topbar} from './Topbar/Topbar'
 import MobileToggle from './MobileToggle/MobileToggle'
+import HeaderLogo from './HeaderLogo/HeaderLogo'
+import HeaderNavbar from './HeaderNavbar/HeaderNavbar'
 
 const Header = () => {
   const {config, classes, attributes} = useLayout()
@@ -16,7 +17,8 @@ const Header = () => {
         )}
       >
         <MobileToggle />
-        <Topbar />
+        <HeaderLogo />
+        <HeaderNavbar />
       </div>
     </div>
   )

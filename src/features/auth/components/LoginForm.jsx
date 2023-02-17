@@ -1,133 +1,109 @@
 import {useState} from 'react'
-import {object, string} from 'yup'
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
-import {useFormik} from 'formik'
+import {Form, Formik} from 'formik'
 import {useIntl} from 'react-intl'
-import {getUserByToken, login} from '../api'
 import {useAuth} from '@/providers/AuthProvider'
 import {toast} from 'react-toastify'
+import {getUserByToken, login} from '../api'
+import InputField from '@/components/elements/Input/InputField'
+import PasswordField from '@/components/elements/Input/PasswordField'
 
-const loginSchema = object({
-  username: string()
-    .min(3, 'Minimum 3 characters')
-    .max(50, 'Maximum 50 characters')
-    .required('Username is required'),
-  password: string()
-    .min(3, 'Minimum 3 characters')
-    .max(50, 'Maximum 50 characters')
-    .required('Password is required'),
-})
+import loginFormModel from '../models/Login/loginFormModel'
+import loginSchema from '../models/Login/loginSchema'
+import loginInitialValues from '../models/Login/loginInitialValues'
 
-const initialValues = {
-  username: '',
-  password: '',
-}
-
-export const LoginForm = () => {
+const LoginForm = () => {
   const intl = useIntl()
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
-  const formik = useFormik({
-    initialValues,
-    validationSchema: loginSchema,
-    onSubmit: async (values, {setStatus, setSubmitting}) => {
-      setLoading(true)
-      try {
-        const {data: auth} = await login(values.username, values.password)
-        saveAuth(auth)
-        const {data: user} = await getUserByToken(auth.access)
-        setCurrentUser(user)
-        toast.success('Login Success!')
-      } catch (error) {
-        saveAuth(undefined)
-        setStatus('The login detail is incorrect')
-        setSubmitting(false)
-        setLoading(false)
-        toast.error('Login Failed!')
-        formik.resetForm()
-      }
-    },
-  })
+  const [enableForgotPassword, setEnableForgotPassword] = useState(true)
+  const [initialLogin, setInitialLogin] = useState(loginInitialValues)
+
+  const {
+    formId,
+    formField: {username, password},
+  } = loginFormModel
+
+  const submit = async (values, actions) => {
+    actions.setSubmitting(true)
+    try {
+      const {data: auth} = await login(values.username, values.password)
+      saveAuth(auth)
+      const data = await getUserByToken(auth.access)
+      setCurrentUser(data)
+      toast.success('Login Success!')
+    } catch (error) {
+      saveAuth(undefined)
+      toast.error('Login Failed!')
+    } finally {
+      actions.setSubmitting(false)
+      actions.resetForm()
+    }
+  }
 
   return (
-    <form className='form w-100' onSubmit={formik.handleSubmit} noValidate id='login_form'>
-      <div className='text-center mb-10'>
-        <h1 className='text-dark mb-3'>{intl.formatMessage({id: 'LOGIN.HEADER'})}</h1>
-      </div>
-      <div className='fv-row mb-10'>
-        <label className='form-label fs-6 fw-bolder text-dark'>Username</label>
-        <input
-          placeholder='Username'
-          {...formik.getFieldProps('username')}
-          className={clsx(
-            'form-control form-control-lg form-control-solid',
-            {'is-invalid': formik.touched.username && formik.errors.username},
-            {
-              'is-valid': formik.touched.username && !formik.errors.username,
-            }
-          )}
-          type='text'
-          name='username'
-          autoComplete='off'
-        />
-        {formik.touched.username && formik.errors.username && (
-          <div className='fv-plugins-message-container'>
-            <span role='alert'>{formik.errors.username}</span>
-          </div>
-        )}
-      </div>
-      <div className='fv-row mb-10'>
-        <div className='d-flex justify-content-between mt-n5'>
-          <div className='d-flex flex-stack mb-2'>
-            <label className='form-label fw-bolder text-dark fs-6 mb-0'>Password</label>
-          </div>
-        </div>
-        <input
-          type='password'
-          autoComplete='off'
-          {...formik.getFieldProps('password')}
-          className={clsx(
-            'form-control form-control-lg form-control-solid',
-            {
-              'is-invalid': formik.touched.password && formik.errors.password,
-            },
-            {
-              'is-valid': formik.touched.password && !formik.errors.password,
-            }
-          )}
-        />
-        {formik.touched.password && formik.errors.password && (
-          <div className='fv-plugins-message-container'>
-            <div className='fv-help-block'>
-              <span role='alert'>{formik.errors.password}</span>
+    <>
+      <Formik
+        enableReinitialize
+        validateOnChange={false}
+        validationSchema={loginSchema}
+        initialValues={initialLogin}
+        onSubmit={submit}
+      >
+        {(actions) => (
+          <Form className='form w-100' id={formId}>
+            <div className='text-start mb-10'>
+              <h1 className='text-dark mb-3 fs-3x'>{intl.formatMessage({id: 'LOGIN.HEADER'})}</h1>
             </div>
-          </div>
+            <div className='mb-7'>
+              <InputField
+                className='form-control form-control-solid form-control-lg '
+                name={username.name}
+                placeholder={username.label}
+              />
+            </div>
+            <div className='mb-7'>
+              <PasswordField
+                className='form-control form-control-solid form-control-lg '
+                name={password.name}
+                placeholder={password.label}
+              />
+            </div>
+            <div className='d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8'>
+              <div></div>
+              {enableForgotPassword ? (
+                <Link
+                  to='/forgot-password'
+                  className='link-primary fs-6 fw-bolder'
+                  style={{marginLeft: '5px'}}
+                >
+                  Forgot Password ?
+                </Link>
+              ) : (
+                <></>
+              )}
+            </div>
+            <div className='text-start mb-10'>
+              <button
+                type='submit'
+                className='btn btn-lg btn-primary'
+                disabled={actions.isSubmitting || !actions.isValid || !actions.touched}
+              >
+                {!actions.isSubmitting && <span className='indicator-label'>Log In</span>}
+                {actions.isSubmitting && (
+                  <span className='indicator-progress' style={{display: 'block'}}>
+                    Please wait...
+                    <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
+                  </span>
+                )}
+              </button>
+            </div>
+          </Form>
         )}
-        <Link
-          to='/auth/forgot-password'
-          className='link-primary fs-6 fw-bolder'
-          style={{marginLeft: '5px'}}
-        >
-          Forgot Password ?
-        </Link>
-      </div>
-      <div className='text-center'>
-        <button
-          type='submit'
-          id='kt_sign_in_submit'
-          className='btn btn-lg btn-primary w-100 mb-5'
-          disabled={formik.isSubmitting || !formik.isValid}
-        >
-          {!loading && <span className='indicator-label'>Continue</span>}
-          {loading && (
-            <span className='indicator-progress' style={{display: 'block'}}>
-              Please wait...
-              <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
-            </span>
-          )}
-        </button>
-      </div>
-    </form>
+      </Formik>
+    </>
   )
 }
+
+export default LoginForm
