@@ -7,6 +7,7 @@ const HeaderMenuItems = () => {
     <>
       <HeaderMenuItem to='/dashboard' title={intl.formatMessage({id: 'DASHBOARD'})} />
       <HeaderMenuItem to='/orders' title={intl.formatMessage({id: 'ORDERS'})} />
+      <HeaderMenuItem to='/activities' title={intl.formatMessage({id: 'ACTIVITIES'})} />
       <HeaderMenuItem to='/cashouts' title={intl.formatMessage({id: 'CASHOUTS'})} />
     </>
   )

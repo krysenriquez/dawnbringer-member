@@ -1,7 +1,7 @@
 import {useEffect, useMemo} from 'react'
-import {CustomCard} from '@/components/elements/Card'
-import {CustomTable2} from '@/components/elements/Table/CustomTable2'
-import {TableLoading} from '@/components/elements/Table/TableLoading'
+import CustomCard from '@/components/elements/Card/CustomCard'
+import CustomTable from '@/components/elements/Table/CustomTable'
+import TableLoading from '@/components/elements/Table/TableLoading'
 import {
   useOrdersListQueryData,
   useOrdersListQueryLoading,
@@ -19,7 +19,7 @@ const OrdersListTable = () => {
     <>
       <CustomCard>
         {tableData ? (
-          <CustomTable2
+          <CustomTable
             {...{
               data: tableData,
               columns: tableColumns,

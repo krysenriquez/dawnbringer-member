@@ -1,15 +1,15 @@
 import {Route, Routes, Outlet} from 'react-router-dom'
 import {useIntl} from 'react-intl'
 import {PageTitle} from '@/providers/PageDataProvider'
-import Dashboard from './Dashboard'
+import ReferralsList from './ReferralsList'
 
-const DashboardRoutes = () => {
+const OrdersRoutes = () => {
   const intl = useIntl()
 
-  const codesBreadCrumbs = [
+  const ordersBreadCrumbs = [
     {
-      title: intl.formatMessage({id: 'DASHBOARD'}),
-      path: '/codes',
+      title: intl.formatMessage({id: 'REFERRALS'}),
+      path: '/orders',
       isSeparator: false,
       isActive: false,
     },
@@ -27,10 +27,10 @@ const DashboardRoutes = () => {
         path=''
         element={
           <>
-            <PageTitle breadcrumbs={codesBreadCrumbs} description=''>
-              {intl.formatMessage({id: 'DASHBOARD'})}
+            <PageTitle breadcrumbs={ordersBreadCrumbs} description=''>
+              {intl.formatMessage({id: 'REFERRALS.LIST'})}
             </PageTitle>
-            <Dashboard />
+            <ReferralsList />
           </>
         }
       />
@@ -38,4 +38,4 @@ const DashboardRoutes = () => {
   )
 }
 
-export default DashboardRoutes
+export default OrdersRoutes

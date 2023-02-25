@@ -5,7 +5,7 @@ import {useIntl} from 'react-intl'
 import ActionCell from '@/components/elements/Table/Cell/ActionCell'
 import CustomSVG from '@/components/elements/SVG/CustomSVG'
 
-const ordersColumn = [
+const referralsColumn = [
   {
     header: 'Order #',
     accessorFn: (row) => row.orderNumber,
@@ -56,31 +56,6 @@ const ordersColumn = [
       )
     },
   },
-  {
-    header: 'Actions',
-    accessorFn: (row) => row.orderId,
-    id: 'orderAction',
-    cell: (info) => {
-      const navigate = useNavigate()
-
-      const handleView = () => {
-        navigate(`${info.row.original.orderId}`, {
-          state: {orderId: info.row.original.orderId},
-        })
-      }
-
-      return (
-        <>
-          <ActionCell
-            handleClick={handleView}
-            className='btn btn-icon btn-icon-primary btn-light btn-sm border-0 me-2'
-          >
-            <CustomSVG path='/media/icons/general/magnifying-glass.svg' className='svg-icon-2' />
-          </ActionCell>
-        </>
-      )
-    },
-  },
 ]
 
-export default ordersColumn
+export default referralsColumn

@@ -41,44 +41,46 @@ export default {
         requiredErrorMsg: 'Contact Number is required',
       },
     },
-    addressInfo: {
-      address1: {
-        key: 'address1',
-        name: 'addressInfo.address1',
-        label: 'Address 1',
-        requiredErrorMsg: 'Address 1',
+    addressInfo: [
+      {
+        address1: {
+          key: 'address1',
+          name: 'addressInfo.address1',
+          label: 'Address 1',
+          requiredErrorMsg: 'Address 1',
+        },
+        address2: {
+          key: 'address2',
+          name: 'addressInfo.address2',
+          label: 'address2',
+          requiredErrorMsg: 'Address 2',
+        },
+        city: {
+          key: 'city',
+          name: 'addressInfo.city',
+          label: 'City',
+          requiredErrorMsg: 'City',
+        },
+        zip: {
+          key: 'zip',
+          name: 'addressInfo.zip',
+          label: 'Zip',
+          requiredErrorMsg: 'Zip',
+        },
+        province: {
+          key: 'province',
+          name: 'addressInfo.province',
+          label: 'Province',
+          requiredErrorMsg: 'Province',
+        },
+        country: {
+          key: 'country',
+          name: 'addressInfo.country',
+          label: 'Country',
+          requiredErrorMsg: 'Country',
+        },
       },
-      address2: {
-        key: 'address2',
-        name: 'addressInfo.address2',
-        label: 'address2',
-        requiredErrorMsg: 'Address 2',
-      },
-      city: {
-        key: 'city',
-        name: 'addressInfo.city',
-        label: 'City',
-        requiredErrorMsg: 'City',
-      },
-      zip: {
-        key: 'zip',
-        name: 'addressInfo.zip',
-        label: 'Zip',
-        requiredErrorMsg: 'Zip',
-      },
-      province: {
-        key: 'province',
-        name: 'addressInfo.province',
-        label: 'Province',
-        requiredErrorMsg: 'Province',
-      },
-      country: {
-        key: 'country',
-        name: 'addressInfo.country',
-        label: 'Country',
-        requiredErrorMsg: 'Country',
-      },
-    },
+    ],
     user: {
       username: {
         key: 'username',

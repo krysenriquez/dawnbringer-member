@@ -1,7 +1,12 @@
 import Code from './widgets/Code'
-
+import Referrals from './widgets/Referrals'
 const DashboardPage = () => {
-  return <Code />
+  return (
+    <>
+      <Code />
+      {/* <Referrals /> */}
+    </>
+  )
 }
 
 export default DashboardPage

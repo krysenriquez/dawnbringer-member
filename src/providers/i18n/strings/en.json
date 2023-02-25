@@ -27,9 +27,15 @@
   "PRODUCTS.TYPES.INFO": "Product Type Info",
   "PRODUCTS.SUPPLIES": "Product Supplies",
 
+  "REFERRALS": "Referrals",
+  "REFERRALS.LIST": "Referral List",
+
   "ORDERS": "Orders",
   "ORDERS.LIST": "Order List",
   "ORDERS.INFO": "Order Info",
+  "ACTIVITIES": "Activities",
+  "ACTIVITIES.LIST": "Activity List",
+  "ACTIVITIES.INFO": "Activity Info",
   "WEBSITE": "Website",
   "SETTINGS": "Settings",
   "": "",
@@ -51,5 +57,19 @@
   "DELIVERY": "Delivery",
   "CASH": "Cash",
   "CARD": "Card",
-  "BANK_TRANSFER": "Bank Transfer"
+  "BANK_TRANSFER": "Bank Transfer",
+
+  "C_WALLET": "Company Wallet",
+  "M_WALLET": "Member Wallet",
+  "PV_WALLET": "Point Value Wallet",
+  "PURCHASE": "Purchase",
+  "PAYOUT": "Payout",
+  "CASHOUT_PROCESSING_FEE": "Cashout Processing Fee",
+  "CASHOUT": "Cashout",
+  "POINT_CONVERSION": "Point Conversion",
+  "REFERRAL_LINK_USAGE": "Referral Link Usage",
+  "REQUESTED": "Requested",
+  "APPROVED": "Approved",
+  "RELEASED": "Released",
+  "DONE": "Done"
 }

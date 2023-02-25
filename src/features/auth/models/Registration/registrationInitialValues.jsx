@@ -6,7 +6,7 @@ const {
     lastName,
     personalInfo: {birthdate, gender},
     contactInfo: {contactNumber},
-    addressInfo: {address1, address2, city, zip, province, country},
+    addressInfo: [{address1, address2, city, zip, province, country}],
     user: {username, emailAddress, password, repeatPassword},
   },
 } = registrationFormModel
@@ -17,8 +17,8 @@ export default {
   [lastName.key]: '',
   personalInfo: {},
   contactInfo: {},
-  addressInfo: {},
   avatarInfo: {},
+  addressInfo: [],
   user: {
     [username.key]: '',
     [emailAddress.key]: '',

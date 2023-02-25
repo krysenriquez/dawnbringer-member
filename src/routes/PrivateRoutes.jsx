@@ -6,6 +6,7 @@ import {SuspensedView} from '@/utils/suspensedView'
 const PrivateRoutes = () => {
   const Dashboard = lazy(() => import('@/features/dashboard/routes'))
   const Orders = lazy(() => import('@/features/orders/routes'))
+  const Activities = lazy(() => import('@/features/activities/routes'))
 
   const routes = useRoutes([
     {
@@ -26,6 +27,14 @@ const PrivateRoutes = () => {
           element: (
             <SuspensedView>
               <Orders />
+            </SuspensedView>
+          ),
+        },
+        {
+          path: 'activities/*',
+          element: (
+            <SuspensedView>
+              <Activities />
             </SuspensedView>
           ),
         },

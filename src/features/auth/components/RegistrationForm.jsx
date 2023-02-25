@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import {useIntl} from 'react-intl'
+import {useNavigate} from 'react-router-dom'
 import {useEffect, useRef, useState} from 'react'
 import {Formik, Form} from 'formik'
 import Swal from 'sweetalert2'
@@ -15,6 +16,7 @@ import registrationSchema from '../models/Registration/registrationSchema'
 
 const RegistrationForm = () => {
   const intl = useIntl()
+  const navigate = useNavigate()
   const swal = withReactContent(Swal)
   const [initialRegistration, setInitialRegistration] = useState(registrationInitialValues)
   const {verified, data} = useRegistrationContext()
@@ -48,6 +50,7 @@ const RegistrationForm = () => {
       toast.error(ex.detail)
     } finally {
       actions.setSubmitting(true)
+      navigate('/')
     }
   }
 

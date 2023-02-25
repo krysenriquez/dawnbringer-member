@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+import CountUp from 'react-countup'
 import CustomSVG from '@/components/elements/SVG/CustomSVG'
 import {toCurrency} from '@/utils/toCurrency'
 import {useAccount} from '@/providers/AccountProvider'
@@ -8,15 +10,8 @@ import {toast} from 'react-toastify'
 
 const Code = () => {
   const {currentAccount} = useAccount()
-  const [referralLink, setReferralLink] = useState(undefined)
 
-  useEffect(() => {
-    if (currentAccount) {
-      setReferralLink(`https://lereussicakes.com/?code=` + currentAccount.accountCode)
-    }
-  }, [currentAccount])
-
-  const copyToClipBoard = () => {
+  const copyToClipBoard = (referralLink) => {
     navigator.clipboard.writeText(referralLink)
     toast.success('Link Copied!')
   }
@@ -29,7 +24,7 @@ const Code = () => {
             <div className='row'>
               <div className='col-xl-6 col-12 text-center mb-10'>
                 <QRCodeSVG
-                  value={referralLink}
+                  value={currentAccount.code.referralLink}
                   size={180}
                   bgColor={'#ffffff'}
                   fgColor={'#000000'}
@@ -57,11 +52,11 @@ const Code = () => {
                       type='text'
                       className='form-control form-control-solid me-3 flex-grow-1'
                       name='search'
-                      defaultValue={referralLink}
+                      defaultValue={currentAccount.code.referralLink}
                     />
                     <button
                       className='btn btn-light btn-active-light-primary fw-bold flex-shrink-0'
-                      onClick={() => copyToClipBoard()}
+                      onClick={() => copyToClipBoard(currentAccount.code.referralLink)}
                     >
                       Copy Link
                     </button>
@@ -70,68 +65,30 @@ const Code = () => {
               </div>
             </div>
             <div className='row'>
-              <div className='col'>
-                <div className='card card-dashed flex-center min-w-175px my-3 p-6'>
-                  <span className='fs-4 fw-semibold text-secondary pb-1 px-2'>Bronze</span>
-                  <span className='fs-lg-2tx fw-bold d-flex justify-content-center'>
-                    <span
-                      data-countup='true'
-                      data-countup-value='40.00'
-                      className='counted'
-                      data-initialized={1}
-                    >
-                      40
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <div className='col'>
-                <div className='card card-dashed flex-center min-w-175px my-3 p-6'>
-                  <span className='fs-4 fw-semibold text-gray-700 pb-1 px-2'>Silver</span>
-                  <span className='fs-lg-2tx fw-bold d-flex justify-content-center'>
-                    <span
-                      data-countup='true'
-                      data-countup-value='40.00'
-                      className='counted'
-                      data-initialized={1}
-                    >
-                      40
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <div className='col'>
-                <div className='card card-dashed flex-center min-w-175px my-3 p-6'>
-                  <span className='fs-4 fw-semibold text-warning pb-1 px-2'>Gold</span>
-                  <span className='fs-lg-2tx fw-bold d-flex justify-content-center'>
-                    <span
-                      data-countup='true'
-                      data-countup-value='60'
-                      className='counted'
-                      data-initialized={1}
-                    >
-                      60
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <div className='col'>
-                <div className='card card-dashed flex-center min-w-175px my-3 p-6'>
-                  <span className='fs-4 fw-semibold text-white pb-1 px-2'>Diamond</span>
-                  <span className='fs-lg-2tx fw-bold d-flex justify-content-center'>
-                    <span
-                      data-countup='true'
-                      data-countup-value='85"'
-                      className='counted'
-                      data-initialized={1}
-                    >
-                      85
-                    </span>
-                  </span>
-                </div>
-              </div>
+              {currentAccount.membershipLevelPoints &&
+                currentAccount.membershipLevelPoints.map((points, index) => {
+                  return (
+                    <div className='col' key={index}>
+                      <div className='card card-dashed flex-center min-w-175px my-3 p-6'>
+                        <span
+                          className={clsx('fs-4 fw-semibold pb-1 px-2', {
+                            'text-secondary': points.membershipLevel == 'Bronze',
+                            'text-gray-700': points.membershipLevel == 'Silver',
+                            'text-warning': points.membershipLevel == 'Gold',
+                            'text-white': points.membershipLevel == 'Diamond',
+                          })}
+                        >
+                          {points.membershipLevel}
+                        </span>
+                        <span className='fs-lg-2tx fw-bold d-flex justify-content-center'>
+                          <CountUp delay={0} end={points.totalPoints} duration={1} />
+                        </span>
+                      </div>
+                    </div>
+                  )
+                })}
             </div>
-            <div className='notice d-flex bg-light-primary rounded border-primary border border-dashed mt-5 p-6'>
+            {/* <div className='notice d-flex bg-light-primary rounded border-primary border border-dashed mt-5 p-6'>
               <CustomSVG
                 path='/media/icons/finance/wallet.svg'
                 className='svg-icon svg-icon-2tx svg-icon-primary me-4'
@@ -148,7 +105,7 @@ const Code = () => {
                   Convert Points
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       )}

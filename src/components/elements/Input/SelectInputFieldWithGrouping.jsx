@@ -1,8 +1,9 @@
 import {useField, useFormikContext} from 'formik'
 import clsx from 'clsx'
 import Select from 'react-select'
+import {useState, useEffect} from 'react'
 
-export default function SelectInputField(props) {
+export default function SelectInputFieldWithGrouping(props) {
   const {setFieldValue, setFieldError} = useFormikContext()
   const {label, required, errorText, data, translate, className, ...rest} = props
   const [field, meta, helpers] = useField(props)
@@ -10,6 +11,7 @@ export default function SelectInputField(props) {
   const {touched, error, value} = meta
   const isError = touched && error && true
   const isValid = touched && !!!error && value
+  const [defaultSelected, setDefaultSelected] = useState('')
 
   function renderErrorMessage() {
     if (isError) {
@@ -21,6 +23,12 @@ export default function SelectInputField(props) {
     setTouched(true)
     setFieldValue(field.name, e.value)
   }
+
+  useEffect(() => {
+    if (meta.initialValue) {
+      setDefaultSelected(meta.initialValue)
+    }
+  }, [meta.initialValue])
 
   const formatGroupLabel = (data) => (
     <div className='react-select-group-label'>
@@ -35,8 +43,18 @@ export default function SelectInputField(props) {
       <Select
         {...field}
         onChange={(e) => handleChange(e)}
-        value={data ? data.find((option) => option.value === field.value) : ''}
+        value={
+          data.length > 0
+            ? data
+                .filter((element) => element.options.find((option) => option.value === field.value))
+                .reduce(
+                  (acc, item) => item.options.find((option) => option.value === field.value),
+                  {}
+                )
+            : ''
+        }
         options={data}
+        defaultInputValue={defaultSelected}
         classNames={{
           singleValue: (state) => 'react-select-value',
           input: (state) => 'react-select-value',

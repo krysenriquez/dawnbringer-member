@@ -46,7 +46,6 @@ const LoginForm = () => {
     <>
       <Formik
         enableReinitialize
-        validateOnChange={false}
         validationSchema={loginSchema}
         initialValues={initialLogin}
         onSubmit={submit}

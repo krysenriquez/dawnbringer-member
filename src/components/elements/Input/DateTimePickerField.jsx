@@ -3,7 +3,7 @@ import {useField} from 'formik'
 import DatePicker from 'react-datepicker'
 import clsx from 'clsx'
 
-export default function DatePickerField(props) {
+export default function DateTimePickerField(props) {
   const {label, required, errorText} = props
   const [field, meta, helper] = useField(props)
   const {touched, error} = meta
@@ -24,11 +24,12 @@ export default function DatePickerField(props) {
         {...field}
         {...props}
         selected={value}
-        dateFormat='yyyy-MM-dd'
+        dateFormat='yyyy-MM-dd h:mm aa'
         onChange={(date) => setValue(date)}
         className='form-control form-control-solid'
         showMonthDropdown
         showYearDropdown
+        showTimeSelect
         dropdownMode='select'
       />
       <div className='fv-plugins-message-container'>

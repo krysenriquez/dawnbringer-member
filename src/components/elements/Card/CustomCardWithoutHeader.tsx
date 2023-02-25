@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-const CustomCard = (props) => {
+const CustomCardWithoutHeader = (props) => {
   const {
     className,
     shadow,
@@ -39,4 +39,4 @@ const CustomCard = (props) => {
   )
 }
 
-export {CustomCard}
+export default CustomCardWithoutHeader
