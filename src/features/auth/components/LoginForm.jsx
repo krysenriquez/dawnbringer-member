@@ -15,7 +15,6 @@ import loginInitialValues from '../models/Login/loginInitialValues'
 
 const LoginForm = () => {
   const intl = useIntl()
-  const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
   const [enableForgotPassword, setEnableForgotPassword] = useState(true)
   const [initialLogin, setInitialLogin] = useState(loginInitialValues)

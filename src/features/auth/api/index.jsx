@@ -18,10 +18,10 @@ const VERIFY_REGISTRATION_URL = `${ACCOUNTS_URL}/verifyregistration/`
 const REGISTER_ACCOUNT_URL = `${ACCOUNTS_URL}/register/`
 const GET_ACCOUNTS_URL = `${ACCOUNTS_URL}/getaccount`
 
-const USER_URL = `${API_URL}/users`
-const RESET_PASSWORD_URL = `${USER_URL}/resetpassword/`
-const VERIFY_USERNAME_URL = `${USER_URL}/checkusername/`
-const VERIFY_EMAIL_URL = `${USER_URL}/checkemailaddress/`
+const USERS_URL = `${API_URL}/users`
+const RESET_PASSWORD_URL = `${USERS_URL}/resetpassword/`
+const VERIFY_USERNAME_URL = `${USERS_URL}/checkusername/`
+const VERIFY_EMAIL_URL = `${USERS_URL}/checkemailaddress/`
 
 export function login(username, password) {
   return axios.post(LOGIN_URL, {username, password})
