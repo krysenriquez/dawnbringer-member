@@ -1,9 +1,6 @@
 import clsx from 'clsx'
-import {useNavigate} from 'react-router-dom'
-import {toCurrency} from '@/utils/toCurrency'
 import {useIntl} from 'react-intl'
-import ActionCell from '@/components/elements/Table/Cell/ActionCell'
-import CustomSVG from '@/components/elements/SVG/CustomSVG'
+import {toCurrency, toPoints} from '@/utils/toCurrency'
 
 const referralsColumn = [
   {
@@ -19,19 +16,16 @@ const referralsColumn = [
     },
   },
   {
-    header: 'Total',
-    accessorFn: (row) => row.totalAmount,
-    id: 'totalAmount',
-    cell: (info) => toCurrency(info.getValue()),
+    header: 'Membership Level',
+    accessorFn: (row) => row.pointValueMembershipName,
+    id: 'pointValueMembershipName',
+    cell: (info) => info.getValue(),
   },
   {
-    header: 'Type',
-    accessorFn: (row) => row.orderType,
-    id: 'orderType',
-    cell: (info) => {
-      const intl = useIntl()
-      return intl.formatMessage({id: info.getValue()})
-    },
+    header: 'Points',
+    accessorFn: (row) => row.pointValue,
+    id: 'pointValue',
+    cell: (info) => toPoints(info.getValue()),
   },
   {
     header: 'Status',
@@ -46,7 +40,8 @@ const referralsColumn = [
             'badge-light-info':
               info.getValue() == 'AWAITING_DELIVERY' ||
               info.getValue() == 'AWAITING_PICKUP' ||
-              info.getValue() == 'ON_DELIVERY',
+              info.getValue() == 'ON_DELIVERY' ||
+              info.getValue() == 'ON_PICKUP',
             'badge-light-danger': info.getValue() == 'CANCELLED' || info.getValue() == 'REFUNDED',
             'badge-light-success': info.getValue() == 'COMPLETED',
           })}

@@ -1,15 +1,19 @@
 import {useEffect} from 'react'
 import {Outlet} from 'react-router-dom'
-import {toAbsoluteUrl} from '@/utils/toAbsoluteUrl'
+import {LayoutSetup, getLayout} from '@/providers/layout/LayoutSetup'
 
 export const SimpleLayout = () => {
+  const layoutSetup = LayoutSetup
+  const config = getLayout()
+
   useEffect(() => {
-    document.body.style.backgroundImage = 'none'
-    return () => {}
-  }, [])
+    if (layoutSetup) {
+      layoutSetup.initSimpleLayout(config)
+    }
+  }, [layoutSetup, config])
 
   return (
-    <div className='d-flex flex-column flex-lg-row flex-column-fluid'>
+    <div className='d-flex flex-column flex-center flex-column-fluid'>
       <Outlet />
     </div>
   )

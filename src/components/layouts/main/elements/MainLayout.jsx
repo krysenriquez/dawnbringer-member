@@ -1,6 +1,8 @@
 import {useEffect} from 'react'
 import {Outlet, useLocation} from 'react-router-dom'
 import {PageDataProvider} from '@/providers/PageDataProvider'
+import {toAbsoluteUrl} from '@/utils/toAbsoluteUrl'
+import {LayoutSetup, getLayout} from '@/providers/layout/LayoutSetup'
 // Layout Components
 import {Footer} from './Footer/Footer'
 import Header from './Header/Header'
@@ -11,6 +13,8 @@ import {MenuComponent} from '@/components/assets/components'
 
 const MainLayout = () => {
   const location = useLocation()
+  const layoutSetup = LayoutSetup
+  const config = getLayout()
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,6 +27,12 @@ const MainLayout = () => {
       MenuComponent.reinitialization()
     }, 500)
   }, [location.key])
+
+  useEffect(() => {
+    if (layoutSetup) {
+      layoutSetup.initMainLayout(config)
+    }
+  }, [layoutSetup, config])
 
   return (
     <PageDataProvider>

@@ -3,6 +3,7 @@ import {AuthLayout} from '../components/AuthLayout'
 import LoginForm from '../components/LoginForm'
 import ForgotPasswordForm from '../components/ForgotPasswordForm'
 import Registration from './Registration'
+import ResetPassword from './ResetPassword'
 
 const AuthRoutes = () => {
   return (
@@ -12,7 +13,8 @@ const AuthRoutes = () => {
         <Route path='*' element={<Navigate to='/' />} />
         <Route path='/' element={<LoginForm />} />
         <Route path='forgot-password' element={<ForgotPasswordForm />} />
-        <Route path='registration' element={<Registration />} />
+        <Route path='reset-password/*' element={<ResetPassword />} />
+        <Route path='registration/*' element={<Registration />} />
       </Route>
     </Routes>
   )

@@ -1,8 +1,12 @@
 import {ResetPasswordForm} from '../components/ResetPasswordForm'
-import {useResetPasswordQueryContext} from '../stores/ResetPasswordQueryProvider'
+import {ResetPasswordProvider} from '../stores/ResetPasswordProvider'
 
-export const ResetPassword = () => {
-  const {verified} = useResetPasswordQueryContext()
-
-  return <>{verified ? <ResetPasswordForm /> : <></>}</>
+const ResetPassword = () => {
+  return (
+    <ResetPasswordProvider>
+      <ResetPasswordForm />
+    </ResetPasswordProvider>
+  )
 }
+
+export default ResetPassword

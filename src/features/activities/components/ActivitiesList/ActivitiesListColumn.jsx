@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import {toCurrency, toPoints} from '@/utils/toCurrency'
+import {toCurrency, toPoints, toMembershipPoints} from '@/utils/toCurrency'
 import {useIntl} from 'react-intl'
 
 const activitiesColumn = [
@@ -32,7 +32,9 @@ const activitiesColumn = [
       return (
         <>
           {info.row.original.wallet == 'PV_WALLET'
-            ? toPoints(info.getValue())
+            ? info.row.original.membershipLevelName && (
+                <>{toMembershipPoints(info.getValue(), info.row.original.membershipLevelName)}</>
+              )
             : toCurrency(info.getValue())}
         </>
       )

@@ -32,33 +32,22 @@ const HeaderUserMenu = () => {
                 src={currentUser?.userAvatar ? currentUser?.userAvatar : blankAvatar}
               />
             </div>
-
-            <div className='d-flex flex-column'>
+            <div>
               <div className='fw-bolder d-flex align-items-center fs-5'>
-                {currentUser?.username}
-                <div className='badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2'>
-                  {currentUser?.userType}
-                </div>
+                {currentUser?.displayName}
+              </div>
+              <div className='badge badge-light-success fw-bolder fs-8'>
+                {currentUser?.userType}
               </div>
             </div>
           </div>
         </div>
         <div className='separator my-2'></div>
         <div className='menu-item px-5'>
-          <Link to={'/profile'} className='menu-link px-5'>
-            My Profile
+          <Link to={'/account'} className='menu-link px-5'>
+            My Account
           </Link>
         </div>
-
-        {/* <div className='menu-item px-5'>
-          <a href='#' className='menu-link px-5'>
-            <span className='menu-text'>My Orders</span>
-            <span className='menu-badge'>
-              <span className='badge badge-light-danger badge-circle fw-bolder fs-7'>3</span>
-            </span>
-          </a>
-        </div> */}
-
         <div className='menu-item px-5'>
           <a onClick={logout} className='menu-link px-5'>
             Sign Out

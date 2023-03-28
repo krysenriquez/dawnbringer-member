@@ -50,20 +50,22 @@ const LoginForm = () => {
         onSubmit={submit}
       >
         {(actions) => (
-          <Form className='form w-100' id={formId}>
-            <div className='text-start mb-10'>
-              <h1 className='text-dark mb-3 fs-3x'>{intl.formatMessage({id: 'LOGIN.HEADER'})}</h1>
+          <Form className='form w-100 pb-lg-20' id={formId}>
+            <div className='text-center mb-11'>
+              <h1 className='text-dark fw-bolder mb-3'>
+                {intl.formatMessage({id: 'LOGIN.HEADER'})}
+              </h1>
             </div>
             <div className='mb-7'>
               <InputField
-                className='form-control form-control-solid form-control-lg '
+                className='form-control'
                 name={username.name}
                 placeholder={username.label}
               />
             </div>
             <div className='mb-7'>
               <PasswordField
-                className='form-control form-control-solid form-control-lg '
+                className='form-control'
                 name={password.name}
                 placeholder={password.label}
               />
@@ -82,7 +84,7 @@ const LoginForm = () => {
                 <></>
               )}
             </div>
-            <div className='text-start mb-10'>
+            <div className='d-grid mb-10'>
               <button
                 type='submit'
                 className='btn btn-lg btn-primary'

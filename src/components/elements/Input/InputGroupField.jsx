@@ -32,7 +32,6 @@ export default function InputGroupField(props) {
         <input
           type='text'
           className={clsx(
-            'form-control',
             {
               'is-invalid': isError,
               'is-valid': isValid,

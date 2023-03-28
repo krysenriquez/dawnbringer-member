@@ -1,5 +1,5 @@
 import {ActivitiesListQueryProvider} from '../stores/ActivitiesListQueryProvider'
-import ActivitiesListTable from '../components/OrdersList/ActivitiesListTable'
+import ActivitiesListTable from '../components/ActivitiesList/ActivitiesListTable'
 
 const ActivitiesList = () => {
   return (

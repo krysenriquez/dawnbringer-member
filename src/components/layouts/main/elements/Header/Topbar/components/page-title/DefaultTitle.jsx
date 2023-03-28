@@ -28,8 +28,8 @@ const DefaultTitle = () => {
                       {item.isActive ? (
                         <li className='breadcrumb-item text-dark'>{item.title}</li>
                       ) : (
-                        <li className='breadcrumb-item text-muted'>
-                          <Link to={item.path} className='text-muted text-hover-primary'>
+                        <li className='breadcrumb-item text-primary'>
+                          <Link to={item.path} className='text-primary text-hover-primary'>
                             {item.title}
                           </Link>
                         </li>

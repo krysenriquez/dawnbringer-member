@@ -4,6 +4,7 @@
   "LOGIN.HEADER": "Member Login",
   "REGISTRATION.HEADER": "Member Registration",
   "FORGOT.HEADER": "Forgot Password",
+  "RESET.HEADER": "Reset Password",
 
   "NEW": "new",
   "ACTIONS": "Actions",
@@ -13,6 +14,8 @@
   "DASHBOARD": "Dashboard",
   "MEMBERS": "Members",
   "CASHOUTS": "Cashouts",
+  "CASHOUTS.LIST": "Cashout List",
+  "CASHOUTS.INFO": "Cashout Info",
   "PRODUCTS": "Products",
   "PRODUCTS.LIST": "Product List",
   "PRODUCTS.INFO": "Product Info",
@@ -38,7 +41,9 @@
   "ACTIVITIES.INFO": "Activity Info",
   "WEBSITE": "Website",
   "SETTINGS": "Settings",
-  "": "",
+
+  "PROFILE": "Account",
+  "PROFILE.INFO": "Account Info",
 
   "DRAFT": "Draft",
   "ACTIVE": "Active",
@@ -64,12 +69,14 @@
   "PV_WALLET": "Point Value Wallet",
   "PURCHASE": "Purchase",
   "PAYOUT": "Payout",
-  "CASHOUT_PROCESSING_FEE": "Cashout Processing Fee",
+  "CASHOUT_PROCESSING_FEE": "Processing Fee",
   "CASHOUT": "Cashout",
   "POINT_CONVERSION": "Point Conversion",
   "REFERRAL_LINK_USAGE": "Referral Link Usage",
   "REQUESTED": "Requested",
   "APPROVED": "Approved",
   "RELEASED": "Released",
-  "DONE": "Done"
+  "DONE": "Done",
+  "MALE": "Male",
+  "FEMALE": "Female"
 }

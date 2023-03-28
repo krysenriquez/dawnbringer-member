@@ -4,6 +4,24 @@ export const DefaultLayoutConfig = {
     darkSkinEnabled: true,
     primaryColor: '#009EF7',
     pageBgWhite: false,
+    body: {
+      simple: {
+        background: {
+          backgroundImage: '/media/bg/le-reussi.png',
+          repeat: 'no-repeat',
+          size: 'cover',
+          position: 'center center',
+        },
+      },
+      main: {
+        background: {
+          backgroundImage: '/media/bg/header-le-reussi.png',
+          repeat: 'no-repeat',
+          size: 'auto 450px',
+          position: 'center top',
+        },
+      },
+    },
   },
   app: {
     loader: {

@@ -6,6 +6,6 @@ const ORDERS_URL = `${API_URL}/orders
 `
 export const GET_REFERRALS_URL = `${ORDERS_URL}/getreferralorders/`
 
-export const getReferrals = (branchId) => {
+export const getReferrals = () => {
   return axios.get(`${GET_REFERRALS_URL}`).then((d) => humps.camelizeKeys(d.data))
 }

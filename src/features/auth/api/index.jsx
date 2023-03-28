@@ -8,7 +8,8 @@ const GET_USER_BY_ACCESSTOKEN_URL = `${AUTH_URL}/whoami/`
 const LOGIN_URL = `${AUTH_URL}/login/`
 const REFRESH_URL = `${AUTH_URL}/refresh/`
 
-const REQUEST_RESET_PASSWORD_URL = `${AUTH_URL}/requestresetpassword/`
+const FORGOT_PASSWORD_URL = `${AUTH_URL}/forgotpassword/`
+const VERIFY_FORGOT_PASSWORD_URL = `${AUTH_URL}/verifyforgotpassword/`
 
 const CORE_URL = `${API_URL}/core`
 const VERIFY_CODE_URL = `${CORE_URL}/verifycode/`
@@ -16,7 +17,7 @@ const VERIFY_CODE_URL = `${CORE_URL}/verifycode/`
 const ACCOUNTS_URL = `${API_URL}/accounts`
 const VERIFY_REGISTRATION_URL = `${ACCOUNTS_URL}/verifyregistration/`
 const REGISTER_ACCOUNT_URL = `${ACCOUNTS_URL}/register/`
-const GET_ACCOUNTS_URL = `${ACCOUNTS_URL}/getaccount`
+const GET_ACCOUNT_URL = `${ACCOUNTS_URL}/getaccount`
 
 const USERS_URL = `${API_URL}/users`
 const RESET_PASSWORD_URL = `${USERS_URL}/resetpassword/`
@@ -52,12 +53,18 @@ export const verifyEmailAddress = (value) => {
 }
 
 export function requestResetPassword(values) {
-  return axios.post(`${REQUEST_RESET_PASSWORD_URL}`, humps.decamelizeKeys(values))
+  return axios.post(`${FORGOT_PASSWORD_URL}`, humps.decamelizeKeys(values))
 }
 
-export function verifyResetPassword(values) {
+export function forgotPassword(values) {
   return axios
-    .get(`${REQUEST_RESET_PASSWORD_URL}`, {params: humps.decamelizeKeys(values)})
+    .post(`${FORGOT_PASSWORD_URL}`, humps.decamelizeKeys(values))
+    .then((d) => humps.camelizeKeys(d.data))
+}
+
+export function verifyForgotPassword(values) {
+  return axios
+    .post(`${VERIFY_FORGOT_PASSWORD_URL}`, humps.decamelizeKeys(values))
     .then((d) => humps.camelizeKeys(d.data))
 }
 
@@ -79,5 +86,5 @@ export function verifycode(values) {
 }
 
 export function getAccount() {
-  return axios.get(`${GET_ACCOUNTS_URL}`).then((d) => humps.camelizeKeys(d.data))
+  return axios.get(`${GET_ACCOUNT_URL}`).then((d) => humps.camelizeKeys(d.data))
 }

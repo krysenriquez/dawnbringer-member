@@ -46,7 +46,7 @@ const ForgotPasswordForm = () => {
         onSubmit={submit}
       >
         {(actions) => (
-          <Form className='form w-100' id={formId}>
+          <Form className='form w-100 pb-lg-20' id={formId}>
             <div className='text-center mb-10'>
               <h1 className='text-dark mb-3'>{intl.formatMessage({id: 'FORGOT.HEADER'})}</h1>
               <div className='text-gray-500 fw-semibold fs-6'>

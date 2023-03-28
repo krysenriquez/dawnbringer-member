@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import CustomCardWithoutHeader from '@/components/elements/Card/CustomCardWithoutHeader'
-import CustomTable2 from '@/components/elements/Table/CustomTable2'
+import CustomTable from '@/components/elements/Table/CustomTable'
 import TableLoading from '@/components/elements/Table/TableLoading'
 import {
   useActivitiesListQueryData,
@@ -23,12 +23,11 @@ const ActivitiesListTable = () => {
     <>
       <CustomCardWithoutHeader>
         {tableData ? (
-          <CustomTable2
+          <CustomTable
             {...{
               data: tableData,
               columns: tableColumns,
-              title: <h2>Activities</h2>,
-              handleClick: handleClick,
+              hasToolbar: false,
             }}
           />
         ) : (

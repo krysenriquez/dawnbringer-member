@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {createContext, useContext, useEffect, useRef, useState} from 'react'
-import {useSearchParams, useNavigate} from 'react-router-dom'
+import {useSearchParams, useNavigate, useParams} from 'react-router-dom'
 import {verifyRegistration} from '../api'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -14,9 +14,9 @@ const RegistrationContext = createContext({
 const RegistrationProvider = ({children}) => {
   const swal = withReactContent(Swal)
   const navigate = useNavigate()
-  const [searchParams, setSearchParams] = useSearchParams()
+  const searchParams = useParams()
   const didRequest = useRef(false)
-  const urlData = searchParams.get('data')
+  const urlData = searchParams['*']
   const [verified, setVerified] = useState(false)
   const [data, setData] = useState(undefined)
 

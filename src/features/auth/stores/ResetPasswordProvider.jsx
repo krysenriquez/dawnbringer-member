@@ -1,23 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {createContext, useContext, useEffect, useRef, useState} from 'react'
-import {useSearchParams, useNavigate} from 'react-router-dom'
-import {useQuery} from 'react-query'
-import {initialQuery} from '@/config/const'
-import {verifyResetPassword} from '../api'
+import {useParams, useNavigate} from 'react-router-dom'
+import {verifyForgotPassword} from '../api'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-const ResetPasswordQueryContext = createContext({
+const ResetPasswordContext = createContext({
   token: undefined,
   verified: false,
 })
 
-const ResetPasswordQueryProvider = ({children}) => {
+const ResetPasswordProvider = ({children}) => {
   const swal = withReactContent(Swal)
   const navigate = useNavigate()
-  const [searchParams, setSearchParams] = useSearchParams()
+  const searchParams = useParams()
   const didRequest = useRef(false)
-  const urlData = searchParams.get('data')
+  const urlData = searchParams['*']
   const [token, setToken] = useState(undefined)
   const [verified, setVerified] = useState(false)
 
@@ -25,11 +23,11 @@ const ResetPasswordQueryProvider = ({children}) => {
     const validateResetPasswordLink = async () => {
       try {
         if (!didRequest.current) {
-          const data = await verifyResetPassword({data: urlData})
+          const data = await verifyForgotPassword({data: urlData})
           if (data) {
             swal.fire('Link Verified!', 'Please reset your password.', 'success').then((result) => {
-              setToken(data)
               setVerified(true)
+              setToken(data)
             })
           }
         }
@@ -54,15 +52,11 @@ const ResetPasswordQueryProvider = ({children}) => {
     token,
     verified,
   }
-  return (
-    <ResetPasswordQueryContext.Provider value={value}>
-      {children}
-    </ResetPasswordQueryContext.Provider>
-  )
+  return <ResetPasswordContext.Provider value={value}>{children}</ResetPasswordContext.Provider>
 }
 
-const useResetPasswordQueryContext = () => {
-  return useContext(ResetPasswordQueryContext)
+const useResetPasswordContext = () => {
+  return useContext(ResetPasswordContext)
 }
 
-export {ResetPasswordQueryProvider, useResetPasswordQueryContext}
+export {ResetPasswordProvider, useResetPasswordContext}

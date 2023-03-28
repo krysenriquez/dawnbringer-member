@@ -8,6 +8,7 @@ const CustomCard = (props) => {
     header,
     hasToolbar,
     toolbarButtonName,
+    toolbarButtonClassName,
     handleToolbarButtonClick,
     bodyClassName,
     children,
@@ -21,7 +22,7 @@ const CustomCard = (props) => {
           {hasToolbar && (
             <div className='card-toolbar'>
               <button
-                className='btn btn-sm btn-light btn-active-primary'
+                className={toolbarButtonClassName && toolbarButtonClassName}
                 onClick={handleToolbarButtonClick}
               >
                 {toolbarButtonName}

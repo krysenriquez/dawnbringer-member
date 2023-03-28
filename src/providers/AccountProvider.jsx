@@ -25,6 +25,7 @@ const AccountProvider = ({children}) => {
         if (!didRequest.current) {
           const data = await getAccount()
           if (data.length > 0) {
+            // Recheck
             setCurrentAccount(data[0])
           } else {
             toast.error('No Account linked to User. Logging out.')
@@ -33,7 +34,7 @@ const AccountProvider = ({children}) => {
         }
       } catch (error) {
         if (!didRequest.current) {
-          // logout()
+          logout()
         }
       }
 

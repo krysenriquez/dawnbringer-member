@@ -1,27 +1,25 @@
-import {useState} from 'react'
 import * as Yup from 'yup'
 import YupPassword from 'yup-password'
 YupPassword(Yup)
-import clsx from 'clsx'
+import {useIntl} from 'react-intl'
 import {Link, useNavigate} from 'react-router-dom'
 import {Form, Formik} from 'formik'
 import {toast} from 'react-toastify'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import {useIntl} from 'react-intl'
+import {useResetPasswordContext} from '../stores/ResetPasswordProvider'
 import {resetPassword} from '../api'
 import PasswordField from '@/components/elements/Input/PasswordField'
 
 import resetPasswordFormModel from '../models/ResetPassword/resetPasswordFormModel'
 import resetPasswordSchema from '../models/ResetPassword/resetPasswordSchema'
 import resetPasswordInitialValues from '../models/ResetPassword/resetPasswordInitialValues'
-import {useResetPasswordQueryContext} from '../stores/ResetPasswordQueryProvider'
 
 export const ResetPasswordForm = () => {
   const intl = useIntl()
   const navigate = useNavigate()
   const swal = withReactContent(Swal)
-  const {verified, token} = useResetPasswordQueryContext()
+  const {verified, token} = useResetPasswordContext()
 
   const {
     formId,
@@ -55,7 +53,7 @@ export const ResetPasswordForm = () => {
           onSubmit={submit}
         >
           {(actions) => (
-            <Form className='form w-100' id={formId}>
+            <Form className='form w-100 pb-lg-20' id={formId}>
               <div className='text-center mb-10'>
                 <h1 className='text-dark mb-3'>{intl.formatMessage({id: 'RESET.HEADER'})}</h1>
                 <div className='text-gray-500 fw-semibold fs-6'>

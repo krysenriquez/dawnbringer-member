@@ -51,3 +51,27 @@ export const arrayToSelectOptions = (array, defaultLabel) => {
 
   return return_arr
 }
+
+export const arrayObjectToSelectOptionsWithDisable = (
+  array,
+  value,
+  label,
+  defaultLabel,
+  disabledField
+) => {
+  let return_arr = [
+    {
+      value: '',
+      label: defaultLabel,
+    },
+  ]
+  array.map((arr) => {
+    return return_arr.push({
+      value: arr[`${value}`],
+      label: arr[`${disabledField}`] ? arr[`${label}`] + ' (Disabled)' : arr[`${label}`],
+      disabled: arr[`${disabledField}`],
+    })
+  })
+
+  return return_arr
+}

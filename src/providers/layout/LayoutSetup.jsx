@@ -1,4 +1,6 @@
 import {DefaultLayoutConfig} from './DefaultLayoutConfig'
+import {toAbsoluteUrl} from '@/utils/toAbsoluteUrl'
+import {el} from 'date-fns/locale'
 
 const LAYOUT_CONFIG_KEY = import.meta.env.VITE_BASE_LAYOUT_CONFIG_KEY || 'LayoutConfig'
 
@@ -77,9 +79,47 @@ export class LayoutSetup {
     LayoutSetup.cssVariables = getEmptyCSSVariables()
   }
 
-  static initLayout(config) {
-    if (config.main?.body?.backgroundImage) {
-      document.body.style.backgroundImage = `url(${config.main.body.backgroundImage})`
+  static initSimpleLayout(config) {
+    if (config.main?.body?.simple?.background) {
+      if (config.main?.body?.simple?.background.backgroundImage) {
+        document.body.style.backgroundImage = `url(${toAbsoluteUrl(
+          config.main.body.simple.background.backgroundImage
+        )})`
+      }
+
+      if (config.main?.body?.simple?.background.repeat) {
+        document.body.style.backgroundRepeat = `${config.main.body.simple.background.repeat}`
+      }
+
+      if (config.main?.body?.simple?.background.size) {
+        document.body.style.backgroundSize = `${config.main.body.simple.background.size}`
+      }
+
+      if (config.main?.body?.simple?.background.position) {
+        document.body.style.backgroundPosition = `${config.main.body.simple.background.position}`
+      }
+    }
+  }
+
+  static initMainLayout(config) {
+    if (config.main?.body?.main?.background) {
+      if (config.main?.body?.main?.background.backgroundImage) {
+        document.body.style.backgroundImage = `url(${toAbsoluteUrl(
+          config.main.body.main.background.backgroundImage
+        )})`
+      }
+
+      if (config.main?.body?.main?.background.repeat) {
+        document.body.style.backgroundRepeat = `${config.main.body.main.background.repeat}`
+      }
+
+      if (config.main?.body?.main?.background.size) {
+        document.body.style.backgroundSize = `${config.main.body.main.background.size}`
+      }
+
+      if (config.main?.body?.main?.background.position) {
+        document.body.style.backgroundPosition = `${config.main.body.main.background.position}`
+      }
     }
   }
 
@@ -188,7 +228,7 @@ export class LayoutSetup {
 
   static initConfig(config) {
     // Init layout
-    LayoutSetup.initLayout(config)
+    LayoutSetup.initSimpleLayout(config)
     if (config.main?.type !== 'default') {
       return
     }

@@ -5,7 +5,7 @@ import {useIntl} from 'react-intl'
 
 export default function SelectField(props) {
   const intl = useIntl()
-  const {label, required, errorText, data, translate, className, ...rest} = props
+  const {label, required, errorText, data, translate, className, disabledField, ...rest} = props
   const [field, meta] = useField(props)
   const {value: selectedValue} = field
   const {touched, error, value} = meta
@@ -30,11 +30,14 @@ export default function SelectField(props) {
           'is-valid': isValid,
         })}
       >
-        {data.map((item, index) => (
-          <option key={index} value={item.value}>
-            {translate ? intl.formatMessage({id: item.label}) : item.label}
-          </option>
-        ))}
+        {data.map((item, index) => {
+          const isDisabled = disabledField && item.disabled
+          return (
+            <option key={index} value={item.value} disabled={isDisabled}>
+              {translate ? intl.formatMessage({id: item.label}) : item.label}
+            </option>
+          )
+        })}
       </select>
       <div className='fv-plugins-message-container'>
         <div className='fv-help-block'>

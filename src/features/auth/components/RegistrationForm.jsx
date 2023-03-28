@@ -55,7 +55,7 @@ const RegistrationForm = () => {
   }
 
   return (
-    <>
+    <div className='d-flex flex-center flex-column-fluid pb-15 pb-lg-20'>
       {verified && (
         <Formik
           enableReinitialize
@@ -66,22 +66,22 @@ const RegistrationForm = () => {
         >
           {(actions) => (
             <Form className='form w-100' id={formId}>
-              <div className='text-start mb-10'>
-                <h1 className='text-dark mb-3 fs-3x'>
+              <div className='text-center mb-11'>
+                <h1 className='text-dark fw-bolder mb-3'>
                   {intl.formatMessage({id: 'REGISTRATION.HEADER'})}
                 </h1>
               </div>
               <div className='row mb-7'>
                 <div className='col-6'>
                   <InputField
-                    className='form-control form-control-solid  form-control-lg'
+                    className='form-control'
                     name={firstName.name}
                     placeholder={firstName.label}
                   />
                 </div>
                 <div className='col-6'>
                   <InputField
-                    className='form-control form-control-solid  form-control-lg'
+                    className='form-control'
                     name={lastName.name}
                     placeholder={lastName.label}
                   />
@@ -89,14 +89,14 @@ const RegistrationForm = () => {
               </div>
               <div className='mb-7'>
                 <InputField
-                  className='form-control form-control-solid  form-control-lg'
+                  className='form-control'
                   name={username.name}
                   placeholder={username.label}
                 />
               </div>
               <div className='mb-7'>
                 <InputField
-                  className='form-control form-control-solid  form-control-lg'
+                  className='form-control'
                   name={emailAddress.name}
                   placeholder={emailAddress.label}
                   required
@@ -104,7 +104,7 @@ const RegistrationForm = () => {
               </div>
               <div className='mb-7'>
                 <PasswordField
-                  className='form-control form-control-solid  form-control-lg'
+                  className='form-control'
                   name={password.name}
                   placeholder={password.label}
                   helperText={password.helperText}
@@ -112,13 +112,13 @@ const RegistrationForm = () => {
               </div>
               <div className='mb-7'>
                 <PasswordField
-                  className='form-control form-control-solid  form-control-lg'
+                  className='form-control'
                   name={repeatPassword.name}
                   placeholder={repeatPassword.label}
                 />
               </div>
               <div className='fv-row mb-10'></div>
-              <div className='text-start mb-10'>
+              <div className='d-grid mb-10'>
                 <button
                   type='submit'
                   className='btn btn-lg btn-primary'
@@ -137,7 +137,7 @@ const RegistrationForm = () => {
           )}
         </Formik>
       )}
-    </>
+    </div>
   )
 }
 
