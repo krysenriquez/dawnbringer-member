@@ -122,18 +122,6 @@ const CashoutInfoPage = () => {
                                 )}
                               </div>
                             </div>
-                            {/* <div className='d-flex flex-stack mb-3'>
-                              <div className='fw-semibold pe-10 text-gray-600 fs-7'>
-                                Subtotal - {intl.formatMessage({id: 'CASHOUT_PROCESSING_FEE'})}
-                              </div>
-                              <div className='text-end fw-bold fs-6 text-gray-800'>
-                                {cashout.activityAmountTotal ? (
-                                  toCurrency(cashout.activityAmountTotal)
-                                ) : (
-                                  <></>
-                                )}
-                              </div>
-                            </div> */}
                             <div className='d-flex flex-stack'>
                               <div className='fw-semibold pe-10 text-gray-600 fs-7'>Total</div>
                               <div className='text-end fw-bold fs-6 text-gray-800'>
@@ -199,7 +187,7 @@ const CashoutInfoPage = () => {
                 <table className='table align-middle table-row-dashed fw-semibold text-gray-600 fs-6 gy-5'>
                   <tbody>
                     {cashout.details ? (
-                      cashout.details.map((detail) => {
+                      cashout.details.map((detail, index) => {
                         return (
                           <tr key={detail.created}>
                             <td className='min-w-70px'>{detail.createdByUsername}</td>

@@ -49,13 +49,13 @@ const ForgotPasswordForm = () => {
           <Form className='form w-100 pb-lg-20' id={formId}>
             <div className='text-center mb-10'>
               <h1 className='text-dark mb-3'>{intl.formatMessage({id: 'FORGOT.HEADER'})}</h1>
-              <div className='text-gray-500 fw-semibold fs-6'>
+              <div className='text-gray-700 fw-semibold fs-6'>
                 Enter your recovery email to reset your password.
               </div>
             </div>
             <div className='fv-row mb-10'>
               <InputField
-                className='form-control form-control-solid'
+                className='form-control form-control-solid form-control-lg'
                 name={recoveryEmail.name}
                 label={recoveryEmail.label}
                 required

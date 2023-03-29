@@ -15,7 +15,7 @@ import resetPasswordFormModel from '../models/ResetPassword/resetPasswordFormMod
 import resetPasswordSchema from '../models/ResetPassword/resetPasswordSchema'
 import resetPasswordInitialValues from '../models/ResetPassword/resetPasswordInitialValues'
 
-export const ResetPasswordForm = () => {
+const ResetPasswordForm = () => {
   const intl = useIntl()
   const navigate = useNavigate()
   const swal = withReactContent(Swal)
@@ -56,17 +56,23 @@ export const ResetPasswordForm = () => {
             <Form className='form w-100 pb-lg-20' id={formId}>
               <div className='text-center mb-10'>
                 <h1 className='text-dark mb-3'>{intl.formatMessage({id: 'RESET.HEADER'})}</h1>
-                <div className='text-gray-500 fw-semibold fs-6'>
+                <div className='text-gray-700 fw-semibold fs-6'>
                   Enter your new password credentials
                 </div>
               </div>
               <div className='mb-10'>
-                <PasswordField name={newPassword.name} label={newPassword.label} required />
+                <PasswordField
+                  name={newPassword.name}
+                  label={newPassword.label}
+                  className='form-control form-control-solid form-control-lg'
+                  required
+                />
               </div>
               <div className='mb-10'>
                 <PasswordField
                   name={confirmNewPassword.name}
                   label={confirmNewPassword.label}
+                  className='form-control form-control-solid form-control-lg'
                   required
                 />
               </div>
@@ -98,3 +104,5 @@ export const ResetPasswordForm = () => {
     </>
   )
 }
+
+export default ResetPasswordForm
