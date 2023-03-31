@@ -2,7 +2,8 @@ import axios from 'axios'
 import humps from 'humps'
 
 const API_URL = import.meta.env.VITE_API_URL
-const CORE_URL = `${API_URL}/core`
+const API_SUFFIX = import.meta.env.VITE_API_SUFFIX
+const CORE_URL = `${API_URL}/core/${API_SUFFIX}`
 
 export const GET_MEMBERSHIP_LEVEL_POINTS = `${CORE_URL}/getmembershiplevelpoints/`
 const GET_CONVERSION_RATE = `${CORE_URL}/getconversionrate/`

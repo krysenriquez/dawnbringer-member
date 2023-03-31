@@ -2,7 +2,7 @@ import {string, object, ref} from 'yup'
 import * as yup from 'yup'
 import YupPassword from 'yup-password'
 YupPassword(yup)
-import {verifyUsername, verifyEmailAddress} from '../../api'
+import {checkUsername, checkEmailAddress} from '../../api'
 import registrationFormModel from './registrationFormModel'
 const {
   formField: {
@@ -13,7 +13,7 @@ const {
 } = registrationFormModel
 
 const validateUsername = async (ctx) => {
-  return await verifyUsername(ctx.parent.username)
+  return await checkUsername(ctx.parent.username)
     .then((response) => {
       return true
     })
@@ -23,7 +23,7 @@ const validateUsername = async (ctx) => {
 }
 
 const validateEmailAddress = async (ctx) => {
-  return await verifyEmailAddress(ctx.parent.emailAddress)
+  return await checkEmailAddress(ctx.parent.emailAddress)
     .then((response) => {
       return true
     })

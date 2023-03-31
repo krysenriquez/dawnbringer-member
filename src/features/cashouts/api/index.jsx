@@ -2,14 +2,14 @@ import axios from 'axios'
 import humps from 'humps'
 
 const API_URL = import.meta.env.VITE_API_URL
+const API_SUFFIX = import.meta.env.VITE_API_SUFFIX
 
-const ACCOUNTS_URL = `${API_URL}/accounts`
+const ACCOUNTS_URL = `${API_URL}/accounts/${API_SUFFIX}`
 export const GET_ACCOUNT_CASHOUT_METHODS_URL = `${ACCOUNTS_URL}/getaccountcashoutmethods/`
 
-const CORE_URL = `${API_URL}/core`
+const CORE_URL = `${API_URL}/core/${API_SUFFIX}`
 export const GET_CASHOUTS_URL = `${CORE_URL}/getcashouts`
 export const GET_CASHOUT_INFO_URL = `${CORE_URL}/getcashoutinfo`
-
 const GET_DEFAULT_CASHOUT_METHODS_URL = `${CORE_URL}/getdefaultcashoutmethods/`
 const GET_WALLET_CAN_CASHOUT_URL = `${CORE_URL}/getwalletcancashout/`
 const GET_WALLET_CASHOUT_SCHEDULES_URL = `${CORE_URL}/getwalletcashoutschedules/`
