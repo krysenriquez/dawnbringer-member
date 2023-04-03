@@ -82,9 +82,9 @@ const ProfileInfo = () => {
                   .filter((address) => {
                     return address.isDefault == true
                   })
-                  .map((address) => {
+                  .map((address, index) => {
                     return (
-                      <div key={address.addressType}>
+                      <div key={index}>
                         <div className='fw-bold mt-5'>Default Address</div>
                         <div className='text-gray-600'>
                           {address.address1 ||

@@ -13,13 +13,11 @@ const OrderInfoQueryProvider = ({children}) => {
     isFetching,
     refetch,
     data: response,
-  } = useQuery(
-    `${GET_ORDER_INFO_URL}-${searchParams.orderId}`,
-    () => {
-      return getOrderInfo(searchParams.orderId)
-    },
-    {cacheTime: 0, keepPreviousData: true, refetchOnWindowFocus: false}
-  )
+  } = useQuery({
+    queryKey: [GET_ORDER_INFO_URL, searchParams?.orderId],
+    queryFn: () => getOrderInfo(searchParams?.orderId),
+    enabled: !!searchParams?.orderId,
+  })
 
   const value = {
     isLoading: isFetching,

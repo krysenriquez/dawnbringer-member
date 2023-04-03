@@ -4,11 +4,11 @@ import {toAbsoluteUrl} from '@/utils/toAbsoluteUrl'
 import {useCompany} from '@/providers/CompanyProvider'
 
 const AuthLayout = () => {
-  const {companyName, companyLogo} = useCompany()
+  const {company} = useCompany()
 
   return (
     <>
-      {companyName && (
+      {company && (
         <div
           className='d-flex flex-column flex-column-fluid bgi-position-y-center bgi-position-x-center bgi-no-repeat bgi-size-cover bgi-attachment-fixed'
           style={{
@@ -19,7 +19,7 @@ const AuthLayout = () => {
             <div className='w-lg-500px p-10 p-lg-15 mx-auto'>
               <div className='text-center mb-10'>
                 <a href='https://lereussicakes.com'>
-                  <img alt='Logo' src={companyLogo} className='theme-dark-show w-140px' />
+                  <img alt='Logo' src={company.logo} className='theme-dark-show w-140px' />
                 </a>
               </div>
               <Outlet />
