@@ -5,7 +5,6 @@
   "REGISTRATION.HEADER": "Member Registration",
   "FORGOT.HEADER": "Forgot Password",
   "RESET.HEADER": "Reset Password",
-
   "NEW": "new",
   "ACTIONS": "Actions",
   "PAGES": "Pages",
@@ -29,10 +28,8 @@
   "PRODUCTS.TYPES.CREATE": "Product Types",
   "PRODUCTS.TYPES.INFO": "Product Type Info",
   "PRODUCTS.SUPPLIES": "Product Supplies",
-
   "REFERRALS": "Referrals",
   "REFERRALS.LIST": "Referral List",
-
   "ORDERS": "Orders",
   "ORDERS.LIST": "Order List",
   "ORDERS.INFO": "Order Info",
@@ -41,10 +38,8 @@
   "ACTIVITIES.INFO": "Activity Info",
   "WEBSITE": "Website",
   "SETTINGS": "Settings",
-
   "PROFILE": "Account",
   "PROFILE.INFO": "Account Info",
-
   "DRAFT": "Draft",
   "ACTIVE": "Active",
   "INACTIVE": "Inactive",
@@ -61,9 +56,9 @@
   "PICKUP": "Pickup",
   "DELIVERY": "Delivery",
   "CASH": "Cash",
+  "GCASH": "G-Cash",
   "CARD": "Card",
   "BANK_TRANSFER": "Bank Transfer",
-
   "C_WALLET": "Company Wallet",
   "M_WALLET": "Member Wallet",
   "PV_WALLET": "Point Value Wallet",
